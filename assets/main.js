@@ -1,6 +1,7 @@
 //itens do array
-let tasks = [
-    { item: 'Item x'},
-    { item: 'Item xx'},
-    { item: 'Item xxx'}
-];
+let tasks = ["Item x","Item xx","Item xxx"];
+console.log(tasks);
+
+const list = document.getElementById("tasks");
+console.log(list);
+
