@@ -1,11 +1,13 @@
-//itens do array
+//itens do array tasks 
 let tasks = ["Item x","Item xx","Item xxx"];
-console.log(tasks);
-console.log(tasks[1]);
 
-//acessando o elemento ul
+//seleciona a lista no DOM onde os itens serão inseridos dinamicamente
 const list = document.getElementById("tasks");
-console.log(list);
 
-//função para lista itens no front-end
-
+//função para lista itens no front-end da aplicação
+tasks.forEach(task => {
+    console.log(task);
+    const li = document.createElement("li");
+    li.textContent = task;
+    list.appendChild(li);
+});
