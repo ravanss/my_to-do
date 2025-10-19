@@ -23,7 +23,7 @@ console.log(retrievedArray);
 const list = document.getElementById("tasks");
 
 //função para lista itens no front-end da aplicação
-tasks.forEach(task => {
+retrievedArray.forEach(task => {
     const li = document.createElement("li");
     li.textContent = task;
     list.appendChild(li);
