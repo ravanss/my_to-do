@@ -1,26 +1,25 @@
-//Trocando para localStorage
 //Array simples com informações padrões
 let tasks = ["Item x","Item xx","Item xxx"];
 
-// Convert the array to a JSON string
+//Converta a matriz em uma string JSON
 const jsonArray = JSON.stringify(tasks);
 
-// Store the JSON string in localStorage with a key named "dados"
+//Armazene a string JSON no localStorage com uma chave chamada "dados"
 localStorage.setItem("dados", jsonArray);
 
-// Retrieve the JSON string from localStorage
-const retrievedJson = localStorage.getItem("dados");
-
+//Variavel para armazenar os dados recuperados apos verificação de retorno dos dados
 let retrievedArray = [];
 
-// Check if the data exists before parsing to avoid errors
+//Recuperar a string JSON do localStorage
+const retrievedJson = localStorage.getItem("dados");
+
+//Verifique se os dados existem antes de analisar para evitar erros
 if (retrievedJson) {
-  retrievedArray = JSON.parse(retrievedJson);
+    retrievedArray = JSON.parse(retrievedJson);
 }
-console.log(retrievedArray);
 
 //seleciona a lista no DOM onde os itens serão inseridos dinamicamente
-const list = document.getElementById("tasks");
+const list = document.getElementById("tasks-list");
 
 //função para lista itens no front-end da aplicação
 retrievedArray.forEach(task => {
@@ -28,3 +27,4 @@ retrievedArray.forEach(task => {
     li.textContent = task;
     list.appendChild(li);
 });
+
