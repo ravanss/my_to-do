@@ -11,3 +11,12 @@ body{
     font-size: 100%;
     list-style-type: none;
 }
+
+#add-button{
+    position: fixed;
+    top: auto;
+    bottom: 50px;
+    left: auto;
+    right: 50px;
+    z-index: 999;
+}
