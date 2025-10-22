@@ -28,3 +28,17 @@ retrievedArray.forEach(task => {
     list.appendChild(li);
 });
 
+//Função para adicionar uma nova tarefa
+function addTask(){
+    const taskInput = document.getElementById("task-input");
+    const newTask = taskInput.value.trim();
+    // Verifica se o input não está vazio
+    if (newTask != ""){
+        // Adiciona a nova tarefa no início do array
+        retrievedArray.unshift(newTask);
+        console.log(retrievedArray);
+    } else {
+        alert("Por favor, insira uma tarefa válida.");
+    }
+}
+
