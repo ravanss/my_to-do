@@ -21,12 +21,14 @@ if (tasksJson) {
 //seleciona a lista no DOM onde os itens serão inseridos dinamicamente
 const list = document.getElementById("tasks-list");
 
-//função para lista itens no front-end da aplicação
-tasks.forEach(task => {
-    const li = document.createElement("li");
-    li.textContent = task;
-    list.appendChild(li);
-});
+//função para lista itens no front-end da aplicação ao carregar a página
+window.onload = function() {
+    tasks.forEach(task => {
+        const li = document.createElement("li");
+        li.textContent = task;
+        list.appendChild(li);
+    })
+};
 
 //Função para adicionar uma nova tarefa
 function addTask(){
@@ -37,8 +39,14 @@ function addTask(){
         // Adiciona a nova tarefa no início do array
         tasks.unshift(newItem);
         console.log(tasks);
+        
     } else {
         alert("Por favor, insira uma tarefa válida.");
     }
 }
 
+//função para salvar as tarefas no localStorage
+function salveTasks(tasksArray){
+    const tasksJson = JSON.stringify(tasksArray);
+    localStorage.setItem('dados', tasksJson);
+}
