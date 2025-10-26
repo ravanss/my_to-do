@@ -1,22 +1,5 @@
-//Array simples com informações padrões
-let task = ["Item x","Item xx","Item xxx"];
-
-//Converta a matriz em uma string JSON
-const tankJson = JSON.stringify(task);
-
-//Armazene a string JSON no localStorage com uma chave chamada "dados"
-localStorage.setItem("dados", tankJson);
-
-//Variavel para armazenar os dados recuperados apos verificação de retorno dos dados
-let tasks = [];
-
-//Recuperar a string JSON do localStorage
-const tasksJson = localStorage.getItem("dados");
-
-//Verifique se os dados existem antes de analisar para evitar erros
-if (tasksJson) {
-    tasks = JSON.parse(tasksJson);
-}
+// Exemplo: Recuperar a lista ao iniciar o app
+let tasks = loadTasks();
 
 //seleciona a lista no DOM onde os itens serão inseridos dinamicamente
 const list = document.getElementById("tasks-list");
@@ -30,6 +13,26 @@ window.onload = function() {
     })
 };
 
+function loadTasks() {
+    // 1. Tenta recuperar a dados salva no localStorage
+    const tasksJSON = localStorage.getItem('dados');
+    // 2. Verifica se há dados (se não for null)
+    if (tasksJSON) {
+        // 3. Converte a string JSON de volta para um Array de JavaScript
+        return JSON.parse(tasksJSON);
+    } else {
+        // 4. Se não houver, retorna um Array vazio
+        return [];
+    }
+}
+
+//função para salvar as tarefas no localStorage
+function salveTasks(tasksArray){
+    //Salvando em Json
+    const tasksJson = JSON.stringify(tasksArray);
+    localStorage.setItem('dados', tasksJson);
+}
+
 //Função para adicionar uma nova tarefa
 function addTask(){
     const taskInput = document.getElementById("task-input");
@@ -38,15 +41,8 @@ function addTask(){
     if (newItem != ""){
         // Adiciona a nova tarefa no início do array
         tasks.unshift(newItem);
-        console.log(tasks);
-        
+        salveTasks(tasks)
     } else {
         alert("Por favor, insira uma tarefa válida.");
     }
-}
-
-//função para salvar as tarefas no localStorage
-function salveTasks(tasksArray){
-    const tasksJson = JSON.stringify(tasksArray);
-    localStorage.setItem('dados', tasksJson);
 }
