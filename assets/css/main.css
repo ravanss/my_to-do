@@ -12,6 +12,14 @@ body{
     list-style-type: none;
 }
 
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+}
+
 #add-button{
     position: fixed;
     top: auto;
