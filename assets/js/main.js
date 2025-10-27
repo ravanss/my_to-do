@@ -31,7 +31,8 @@ function addTask(){
         // Adiciona a nova tarefa no início do array
         tasks.unshift(newItem);
         salveTasks(tasks)
-        console.log('Tarefa adicionada: ' + newItem);
+        alert("Tarefa adicionada com sucesso!");
+        closeModal()
     } else {
         alert("Por favor, insira uma tarefa válida.");
     }
@@ -42,8 +43,11 @@ function salveTasks(tasksArray){
     //Salvando em Json
     const tasksJson = JSON.stringify(tasksArray);
     localStorage.setItem('dados', tasksJson);
-    //Fechar modal após salvar
-    const myModal = new bootstrap.Modal(document.getElementById('modalAddTask'));
-    myModal.hide();
-    console.log("Tarefa salva com sucesso!");
+}
+
+//Fechar o modal após adicionar a tarefa
+function closeModal() {
+    const modalID = document.getElementById("modalAddTask");
+    const modal = bootstrap.Modal.getInstance(modalID);
+    modal.hide();
 }
