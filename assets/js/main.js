@@ -13,6 +13,7 @@ window.onload = function() {
     })
 };
 
+//Função para carregar as tarefas do localStorage
 function loadTasks() {
     const tasksJSON = localStorage.getItem('dados');
     if (tasksJSON) {
