@@ -20,6 +20,8 @@ body{
     z-index: 999;
 }
 
+.main{padding-top: 50px;}
+
 #add-button{
     position: fixed;
     top: auto;

@@ -8,8 +8,10 @@ const list = document.getElementById("tasks-list");
 window.onload = function() {
     tasks.forEach(task => {
         const li = document.createElement("li");
-        li.textContent = task;
+        const a = document.createElement("a");
+        a.textContent = task;
         list.appendChild(li);
+        li.appendChild(a);
     })
 };
 
