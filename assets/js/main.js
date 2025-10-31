@@ -1,10 +1,10 @@
 //Recuperar a lista ao iniciar o app
 let tasks = loadTasks();
 
-//seleciona a lista no DOM onde os itens serão inseridos dinamicamente
+//Seleciona a lista no DOM onde os itens serão inseridos dinamicamente
 const list = document.getElementById("tasks-list");
 
-//função para lista itens no front-end da aplicação ao carregar a página
+//Função para lista itens no front-end da aplicação ao carregar a página com loadTasks()
 window.onload = function() {
     tasks.forEach(task => {
         const li = document.createElement("li");
