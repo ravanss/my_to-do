@@ -33,6 +33,7 @@ body{
 }
 
 #tasks-list li a{
+    display: block;
     padding: 10px;
 }
 
