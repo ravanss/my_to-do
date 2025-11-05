@@ -1,12 +1,15 @@
+//Limpar o localStorage (apenas para testes)
+localStorage.clear('dados');
+
 //Recuperar a lista ao iniciar o app
-let tasks = loadTasks();
+const tasks = loadTasks();
 
 //Seleciona a lista no DOM onde os itens serão inseridos dinamicamente
 const list = document.getElementById("tasks-list");
 
 //Função para lista itens no front-end da aplicação ao carregar a página com loadTasks()
 window.onload = function() {
-    tasks.forEach(task => {
+    tasks.forEach(taskItem => {
         //Criar elementos HTML para cada tarefa
         const li = document.createElement("li");
         const a = document.createElement("a");
@@ -15,8 +18,7 @@ window.onload = function() {
         //Configurar classes e atributos
         i.className = "fa-solid fa-trash";
         li.className = "list-item";
-        a.textContent = task;
-        a.setAttribute("data-task", task);
+        a.textContent = taskItem;
         //Criado a estrutura e inserido na lista
         list.appendChild(li);
         li.appendChild(a);
@@ -37,12 +39,14 @@ function loadTasks() {
 
 //Função para adicionar uma nova tarefa
 function addTask(){
-    const taskInput = document.getElementById("task-input");
-    const newItem = taskInput.value.trim();
+    const itemReceived = document.getElementById("task-input");
+    let id;
+    const newItem = itemReceived.value.trim();
     // Verifica se o input não está vazio
     if (newItem != ""){
+        let atualid = id + 1;
         // Adiciona a nova tarefa no início do array
-        tasks.unshift(newItem);
+        tasks.unshift(atualid, newItem);
         salveTasks(tasks)
         alert("Tarefa adicionada com sucesso!");
         closeModal()
@@ -52,7 +56,9 @@ function addTask(){
 }
 
 //Função para alterar o nome da tarefa
-
+function editTask(){
+    
+}
 
 //função para salvar as tarefas no localStorage
 function salveTasks(tasksArray){
