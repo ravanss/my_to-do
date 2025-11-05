@@ -1,5 +1,5 @@
 //Limpar o localStorage (apenas para testes)
-localStorage.clear('dados');
+//localStorage.clear('dados');
 
 //Recuperar a lista ao iniciar o app
 const tasks = loadTasks();
@@ -18,7 +18,8 @@ window.onload = function() {
         //Configurar classes e atributos
         i.className = "fa-solid fa-trash";
         li.className = "list-item";
-        a.textContent = taskItem;
+        a.textContent = taskItem.name;
+        span.dataset.id = taskItem.id;
         //Criado a estrutura e inserido na lista
         list.appendChild(li);
         li.appendChild(a);
@@ -40,16 +41,13 @@ function loadTasks() {
 //Função para adicionar uma nova tarefa
 function addTask(){
     const itemReceived = document.getElementById("task-input");
-    let id;
     const newItem = itemReceived.value.trim();
-    // Verifica se o input não está vazio
-    if (newItem != ""){
-        let atualid = id + 1;
-        // Adiciona a nova tarefa no início do array
-        tasks.unshift(atualid, newItem);
-        salveTasks(tasks)
+    const id = tasks.length + 1;
+    if (newItem != "") {
+        tasks.unshift({ id: id, name: newItem});
+        salveTasks(tasks);
         alert("Tarefa adicionada com sucesso!");
-        closeModal()
+        closeModal();
     } else {
         alert("Por favor, insira uma tarefa válida.");
     }
