@@ -20,6 +20,9 @@ window.onload = function() {
         li.className = "list-item";
         a.textContent = taskItem.name;
         span.dataset.id = taskItem.id;
+        span.onclick = function() {
+           editTask(taskItem.id);
+        }
         //Criado a estrutura e inserido na lista
         list.appendChild(li);
         li.appendChild(a);
@@ -54,8 +57,10 @@ function addTask(){
 }
 
 //Função para alterar o nome da tarefa
-function editTask(){
-    
+function editTask(itemId){
+    const itemIndex = itemId;
+    console.log('retorno id na função', itemIndex);
+    opemModal(itemIndex);
 }
 
 //função para salvar as tarefas no localStorage
@@ -63,6 +68,15 @@ function salveTasks(tasksArray){
     //Salvando em Json
     const tasksJson = JSON.stringify(tasksArray);
     localStorage.setItem('dados', tasksJson);
+}
+
+//Fechar o modal após adicionar a tarefa
+function opemModal(taskValue) {
+    const modalID = document.getElementById("modalAddTask");
+    const modal = new bootstrap.Modal(modalID);
+    modal.show();
+    const taskInput = document.getElementById("task-input");
+    taskInput.value = taskValue;
 }
 
 //Fechar o modal após adicionar a tarefa
