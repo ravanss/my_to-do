@@ -58,9 +58,13 @@ function addTask(){
 
 //Função para alterar o nome da tarefa
 function editTask(itemId){
-    const itemIndex = itemId;
-    console.log('retorno id na função', itemIndex);
-    opemModal(itemIndex);
+    let item = "";
+    tasks.forEach(taskItem => {
+        if (taskItem.id === itemId) {
+            return item = taskItem.name;
+        }
+    });
+    opemModal(item);
 }
 
 //função para salvar as tarefas no localStorage
