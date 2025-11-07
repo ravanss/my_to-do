@@ -65,6 +65,7 @@ function editTask(itemId){
         }
     });
     opemModal(item);
+    
 }
 
 //função para salvar as tarefas no localStorage
