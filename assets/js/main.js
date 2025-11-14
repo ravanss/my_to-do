@@ -77,7 +77,7 @@ function salveTasks(tasksArray){
 
 //Fechar o modal após adicionar a tarefa
 function opemModal(taskValue) {
-    const modalID = document.getElementById("modalAddTask");
+    const modalID = document.getElementById("modalEditTask");
     const modal = new bootstrap.Modal(modalID);
     modal.show();
     const taskInput = document.getElementById("task-input");
