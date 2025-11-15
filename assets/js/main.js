@@ -51,6 +51,7 @@ function addTask(){
         salveTasks(tasks);
         alert("Tarefa adicionada com sucesso!");
         closeModal();
+        modifyModal("modalAddTask", "Adicionar nova tarefa", "Salvar");
     } else {
         alert("Por favor, insira uma tarefa válida.");
     }
@@ -67,6 +68,16 @@ function editTask(itemId){
     opemModal(item);
     
 }
+//Função para modificar o modal
+function modifyModal(modalID, modalTitle, modalbtn){
+    let modal = document.querySelectorAll('.modal');
+    modal.forEach(modalItem =>{
+        modalItem.id = modalID;
+        console.log(modalItem.id);
+        return modalItem.id;
+    });
+    console.log(modal);
+}
 
 //função para salvar as tarefas no localStorage
 function salveTasks(tasksArray){
@@ -77,7 +88,7 @@ function salveTasks(tasksArray){
 
 //Fechar o modal após adicionar a tarefa
 function opemModal(taskValue) {
-    const modalID = document.getElementById("modalEditTask");
+    const modalID = document.getElementById("modalAddTask");
     const modal = new bootstrap.Modal(modalID);
     modal.show();
     const taskInput = document.getElementById("task-input");
