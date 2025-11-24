@@ -51,6 +51,7 @@ function addTask(){
         salveTasks(tasks);
         alert("Tarefa adicionada com sucesso!");
         closeModal();
+        window.location.reload(true);
     } else {
         alert("Por favor, insira uma tarefa válida.");
     }
@@ -70,7 +71,7 @@ function editTask(itemId){
 //Função para modificar o modal
 function modifyModal(modalID, modalTitle){
     let modal = document.querySelectorAll('.modal');
-    let modalTitle = document.get
+
     modal.forEach(modalItem =>{
         modalItem.id = modalID;
         console.log(modalItem.id);
