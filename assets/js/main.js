@@ -51,7 +51,7 @@ function addTask(){
         salveTasks(tasks);
         alert("Tarefa adicionada com sucesso!");
         closeModal();
-        window.location.reload(true);
+        reloadPage();
     } else {
         alert("Por favor, insira uma tarefa válida.");
     }
@@ -101,4 +101,9 @@ function closeModal() {
     const modalID = document.getElementById("modalAddTask");
     const modal = bootstrap.Modal.getInstance(modalID);
     modal.hide();
+}
+
+//Função de recarregar a página
+function reloadPage(){
+    window.location.reload(true);
 }
