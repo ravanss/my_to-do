@@ -58,7 +58,7 @@ function addTask(){
 }
 
 //Função para alterar o nome da tarefa
-function editTask(itemId){
+/*function editTask(itemId){
     let item = "";
     tasks.forEach(taskItem => {
         if (taskItem.id === itemId) {
@@ -67,18 +67,7 @@ function editTask(itemId){
     });
     opemModal(item);
     
-}
-//Função para modificar o modal
-function modifyModal(modalID, modalTitle){
-    let modal = document.querySelectorAll('.modal');
-
-    modal.forEach(modalItem =>{
-        modalItem.id = modalID;
-        console.log(modalItem.id);
-        return modalItem.id;
-    });
-    console.log(modal);
-}
+}*/
 
 //função para salvar as tarefas no localStorage
 function salveTasks(tasksArray){
@@ -94,6 +83,15 @@ function opemModal(taskValue) {
     modal.show();
     const taskInput = document.getElementById("task-input");
     taskInput.value = taskValue;
+}
+
+function modifyModal(id) {
+    let modal = document.getElementById("modalAddTask");
+    console.log( modal.id);
+    modal.id = id;
+    console.log( modal.id);
+    const newModal = new bootstrap.Modal(modal);
+    newModal.show();
 }
 
 //Fechar o modal após adicionar a tarefa
