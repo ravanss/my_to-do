@@ -21,7 +21,7 @@ window.onload = function() {
         a.textContent = taskItem.name;
         span.dataset.id = taskItem.id;
         span.onclick = function() {
-           editTask(taskItem.id);
+           editTask('modalEditTask', taskItem.id);
         }
         //Criado a estrutura e inserido na lista
         list.appendChild(li);
@@ -58,16 +58,15 @@ function addTask(){
 }
 
 //Função para alterar o nome da tarefa
-/*function editTask(itemId){
+function editTask(modalEditTask,itemId){
     let item = "";
     tasks.forEach(taskItem => {
         if (taskItem.id === itemId) {
             return item = taskItem.name;
         }
     });
-    opemModal(item);
     
-}*/
+}
 
 //função para salvar as tarefas no localStorage
 function salveTasks(tasksArray){
@@ -76,22 +75,14 @@ function salveTasks(tasksArray){
     localStorage.setItem('dados', tasksJson);
 }
 
-//Fechar o modal após adicionar a tarefa
-function opemModal(taskValue) {
+
+//Função para cliar modal de edição
+function createNemModal(modalId) {
     const modalID = document.getElementById("modalAddTask");
     const modal = new bootstrap.Modal(modalID);
     modal.show();
     const taskInput = document.getElementById("task-input");
-    taskInput.value = taskValue;
-}
-
-function modifyModal(id) {
-    let modal = document.getElementById("modalAddTask");
-    console.log( modal.id);
-    modal.id = id;
-    console.log( modal.id);
-    const newModal = new bootstrap.Modal(modal);
-    newModal.show();
+    taskInput.value = "";
 }
 
 //Fechar o modal após adicionar a tarefa
