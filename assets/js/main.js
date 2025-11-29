@@ -59,12 +59,21 @@ function addTask(){
 
 //Função para alterar o nome da tarefa
 function editTask(modalEditTask,itemId){
+    let modalID = modalEditTask;
     let item = "";
     tasks.forEach(taskItem => {
         if (taskItem.id === itemId) {
             return item = taskItem.name;
         }
     });
+    console.log(item);
+    console.log(modalID);
+    const editModal = new bootstrap.Modal(modalEditTask, {
+        backdrop: true,
+        focus: true,
+        keyboard: false
+    });
+    console.log(editModal);
     
 }
 
