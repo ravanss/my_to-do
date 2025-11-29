@@ -60,6 +60,7 @@ function addTask(){
 //Função para alterar o nome da tarefa
 function editTask(modalEditTask,itemId){
     let modalID = modalEditTask;
+    //Buscar o nome da tarefa pelo ID
     let item = "";
     tasks.forEach(taskItem => {
         if (taskItem.id === itemId) {
@@ -68,13 +69,15 @@ function editTask(modalEditTask,itemId){
     });
     console.log(item);
     console.log(modalID);
-    const editModal = new bootstrap.Modal(modalEditTask, {
-        backdrop: true,
-        focus: true,
-        keyboard: false
-    });
-    console.log(editModal);
+    //Abrir o modal de edição
+    let editModal = document.querySelector('.modal');
+    editModal.setAttribute('id', modalID);
+    let novoModal = new bootstrap.Modal(editModal);
+    novoModal.handleUpdate();
+    novoModal.show();
     
+    console.log(editModal);
+    console.log(novoModal);
 }
 
 //função para salvar as tarefas no localStorage
@@ -82,16 +85,6 @@ function salveTasks(tasksArray){
     //Salvando em Json
     const tasksJson = JSON.stringify(tasksArray);
     localStorage.setItem('dados', tasksJson);
-}
-
-
-//Função para cliar modal de edição
-function createNemModal(modalId) {
-    const modalID = document.getElementById("modalAddTask");
-    const modal = new bootstrap.Modal(modalID);
-    modal.show();
-    const taskInput = document.getElementById("task-input");
-    taskInput.value = "";
 }
 
 //Fechar o modal após adicionar a tarefa
@@ -104,4 +97,12 @@ function closeModal() {
 //Função de recarregar a página
 function reloadPage(){
     window.location.reload(true);
+}
+
+function clickModal(){
+    const modifyIdModal = document.querySelector('.modal');
+    modifyIdModal.setAttribute('id', 'modalAddTask');
+    let reOpemModal = new bootstrap.Modal(modifyIdModal);
+    reOpemModal.handleUpdate();
+    reOpemModal.show();
 }
