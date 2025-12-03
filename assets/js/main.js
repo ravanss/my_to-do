@@ -67,17 +67,19 @@ function editTask(modalEditTask,itemId){
             return item = taskItem.name;
         }
     });
-    console.log(item);
-    console.log(modalID);
-    //Abrir o modal de edição
+    //Abrir o modal de ediçãoWW
     let editModal = document.querySelector('.modal');
     editModal.setAttribute('id', modalID);
     let novoModal = new bootstrap.Modal(editModal);
     novoModal.handleUpdate();
     novoModal.show();
-    
-    console.log(editModal);
     console.log(novoModal);
+}
+
+function clickModal(){
+    let modifyIdModal = document.querySelector('.modal');
+    modifyIdModal.setAttribute('id', 'modalAddTask');
+    modifyIdModal.show();
 }
 
 //função para salvar as tarefas no localStorage
@@ -97,12 +99,4 @@ function closeModal() {
 //Função de recarregar a página
 function reloadPage(){
     window.location.reload(true);
-}
-
-function clickModal(){
-    const modifyIdModal = document.querySelector('.modal');
-    modifyIdModal.setAttribute('id', 'modalAddTask');
-    let reOpemModal = new bootstrap.Modal(modifyIdModal);
-    reOpemModal.handleUpdate();
-    reOpemModal.show();
 }
