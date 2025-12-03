@@ -76,11 +76,10 @@ function editTask(modalEditTask,itemId){
     console.log(novoModal);
 }
 
-function clickModal(){
-    let modifyIdModal = document.querySelector('.modal');
-    modifyIdModal.setAttribute('id', 'modalAddTask');
-    modifyIdModal.show();
-}
+const btnClass = document.getElementById('add-button');
+btnClass.addEventListener('mousemove', function() {
+    console.log('Mouse move sobre o botão!');
+});
 
 //função para salvar as tarefas no localStorage
 function salveTasks(tasksArray){
