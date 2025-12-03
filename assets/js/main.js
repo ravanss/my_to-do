@@ -6,6 +6,8 @@ const tasks = loadTasks();
 
 //Seleciona a lista no DOM onde os itens serão inseridos dinamicamente
 const list = document.getElementById("tasks-list");
+//Seleciona o modal
+const modal = document.querySelector('.modal');
 
 //Função para lista itens no front-end da aplicação ao carregar a página com loadTasks()
 window.onload = function() {
@@ -76,17 +78,18 @@ function editTask(modalEditTask,itemId){
     console.log(novoModal);
 }
 
-const btnClass = document.getElementById('add-button');
-btnClass.addEventListener('mousemove', function() {
-    console.log('Mouse move sobre o botão!');
-});
-
 //função para salvar as tarefas no localStorage
 function salveTasks(tasksArray){
     //Salvando em Json
     const tasksJson = JSON.stringify(tasksArray);
     localStorage.setItem('dados', tasksJson);
 }
+
+//Altera o id do modal, antes do click no botão adicionar tarefa
+const btnClass = document.getElementById('add-button');
+btnClass.addEventListener('mousemove', function() {
+    modal.setAttribute('id', 'modalAddTask');    
+});
 
 //Fechar o modal após adicionar a tarefa
 function closeModal() {
