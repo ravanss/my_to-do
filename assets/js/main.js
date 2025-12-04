@@ -69,13 +69,16 @@ function editTask(modalEditTask,itemId){
             return item = taskItem.name;
         }
     });
-    //Abrir o modal de ediçãoWW
-    let editModal = document.querySelector('.modal');
-    editModal.setAttribute('id', modalID);
-    let novoModal = new bootstrap.Modal(editModal);
-    novoModal.handleUpdate();
-    novoModal.show();
-    console.log(novoModal);
+    //Abrir o modal de edição
+    modal.setAttribute('id', modalID);
+    //Alterando informações do modal
+    let modalEdit = new bootstrap.Modal(modal);
+    let modalEditTitle = modal.querySelector('.modal-title');
+    let modalEditInput = modal.querySelector('#task-input');
+    modalEditTitle.textContent = `Editandoo a tarefa: ${item}`;
+    modalEditInput.value = item;
+    //exibir o modal
+    modalEdit.show();
 }
 
 //função para salvar as tarefas no localStorage
