@@ -1,13 +1,13 @@
 //Limpar o localStorage (apenas para testes)
 //localStorage.clear('dados');
-
 //Recuperar a lista ao iniciar o app
 const tasks = loadTasks();
-
 //Seleciona a lista no DOM onde os itens serão inseridos dinamicamente
 const list = document.getElementById("tasks-list");
 //Seleciona o modal
 const modal = document.querySelector('.modal');
+//Seleciona o botão adicionar tarefa
+const btnClass = document.getElementById('add-button');
 
 //Função para lista itens no front-end da aplicação ao carregar a página com loadTasks()
 window.onload = function() {
@@ -52,7 +52,7 @@ function addTask(){
         tasks.unshift({ id: id, name: newItem});
         salveTasks(tasks);
         alert("Tarefa adicionada com sucesso!");
-        closeModal();
+        modal.hide();
         reloadPage();
     } else {
         alert("Por favor, insira uma tarefa válida.");
@@ -69,7 +69,7 @@ function editTask(modalEditTask,itemId){
             return item = taskItem.name;
         }
     });
-    //Abrir o modal de edição
+    //Alterando ID do modal
     modal.setAttribute('id', modalID);
     //Alterando informações do modal
     let modalEdit = new bootstrap.Modal(modal);
@@ -88,18 +88,14 @@ function salveTasks(tasksArray){
     localStorage.setItem('dados', tasksJson);
 }
 
-//Altera o id do modal, antes do click no botão adicionar tarefa
-const btnClass = document.getElementById('add-button');
+//Altera o id, title e deixa o inpit limpo do modal, antes do click no botão adicionar tarefa
 btnClass.addEventListener('mousemove', function() {
-    modal.setAttribute('id', 'modalAddTask');    
+    modal.setAttribute('id', 'modalAddTask');
+    let modalTitle = modal.querySelector('.modal-title');
+    let modalInput = modal.querySelector('#task-input');
+    modalTitle.textContent = 'Adicionando nova tarefa';
+    modalInput.value = '';
 });
-
-//Fechar o modal após adicionar a tarefa
-function closeModal() {
-    const modalID = document.getElementById("modalAddTask");
-    const modal = bootstrap.Modal.getInstance(modalID);
-    modal.hide();
-}
 
 //Função de recarregar a página
 function reloadPage(){
