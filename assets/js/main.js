@@ -23,7 +23,7 @@ window.onload = function() {
         a.textContent = taskItem.name;
         span.dataset.id = taskItem.id;
         span.onclick = function() {
-           editTask('modalEditTask', taskItem.id);
+           selectItem('modalEditTask', taskItem.id);
         }
         //Criado a estrutura e inserido na lista
         list.appendChild(li);
@@ -52,7 +52,7 @@ function addTask(){
         tasks.unshift({ id: id, name: newItem});
         salveTasks(tasks);
         alert("Tarefa adicionada com sucesso!");
-        modal.hide();
+        closeModal();
         reloadPage();
     } else {
         alert("Por favor, insira uma tarefa válida.");
@@ -60,7 +60,7 @@ function addTask(){
 }
 
 //Função para alterar o nome da tarefa
-function editTask(modalEditTask,itemId){
+function selectItem(modalEditTask,itemId){
     let modalID = modalEditTask;
     //Buscar o nome da tarefa pelo ID
     let item = "";
@@ -75,10 +75,21 @@ function editTask(modalEditTask,itemId){
     let modalEdit = new bootstrap.Modal(modal);
     let modalEditTitle = modal.querySelector('.modal-title');
     let modalEditInput = modal.querySelector('#task-input');
+    let modalEditClick = modal.querySelector('#add-task');
     modalEditTitle.textContent = `Editandoo a tarefa: ${item}`;
     modalEditInput.value = item;
+    modalEditClick.setAttribute('onclick', 'editTask()');
     //exibir o modal
     modalEdit.show();
+}
+
+function editTask(){
+    const editInput= document.getElementById("task-input");
+    const itemModified = editInput.value.trim();
+    tasks.forEach(taskItem => {
+        console.log(taskItem);
+    });
+    console.log(itemModified);
 }
 
 //função para salvar as tarefas no localStorage
@@ -93,9 +104,18 @@ btnClass.addEventListener('mousemove', function() {
     modal.setAttribute('id', 'modalAddTask');
     let modalTitle = modal.querySelector('.modal-title');
     let modalInput = modal.querySelector('#task-input');
+    let modalClick = modal.querySelector('#add-task');
     modalTitle.textContent = 'Adicionando nova tarefa';
     modalInput.value = '';
+    modalClick.setAttribute('onclick', 'addTask()');
 });
+
+//Fechar o modal após adicionar a tarefa
+function closeModal() {
+    const modalID = document.getElementById("modalAddTask");
+    const modal = bootstrap.Modal.getInstance(modalID);
+    modal.hide();
+}
 
 //Função de recarregar a página
 function reloadPage(){
