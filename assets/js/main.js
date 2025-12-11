@@ -25,22 +25,22 @@ window.onload = function() {
         //Criar elementos HTML para cada tarefa
         const li = document.createElement("li");
         const a = document.createElement("a");
-        const span = document.createElement("span");
+        const spanEdit = document.createElement("span");
         const i = document.createElement("i");
         //Configurar classes e atributos
-        i.className = "fa-solid fa-trash";
         li.className = "list-item";
         a.textContent = taskItem.name;
-        span.dataset.id = taskItem.id;
-        span.onclick = function() {
+        spanEdit.dataset.id = taskItem.id;
+        spanEdit.onclick = function() {
            selectItem('modalEditTask', taskItem.id);
         }
+        i.className = "fa-regular fa-pen-to-square";
         //Criado a estrutura e inserido na lista
         list.appendChild(li);
         li.appendChild(a);
-        a.appendChild(span);
-        span.appendChild(i);
-    })
+        a.appendChild(spanEdit);
+        spanEdit.appendChild(i);
+    });
 };
 
 //Função para adicionar uma nova tarefa

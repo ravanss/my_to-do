@@ -17,10 +17,11 @@ body{
     left: 0;
     width: 100%;
     z-index: 999;
+    padding: 20px;
 }
 
 .main{
-    padding-top: 50px;
+    padding-top: 70px;
 }
 
 #tasks-list{
