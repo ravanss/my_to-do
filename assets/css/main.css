@@ -41,6 +41,17 @@ body{
     width: 100%;
 }
 
+#tasks-list li a div{
+    display: flex;
+}
+
+#tasks-list li a div span{
+    cursor: pointer;
+    font-size: 20px;
+    margin: 0 5px;
+}
+
+
 #add-button{
     position: fixed;
     top: auto;

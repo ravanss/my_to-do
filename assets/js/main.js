@@ -22,24 +22,35 @@ function loadTasks() {
 //Função para lista itens no front-end da aplicação ao carregar a página com loadTasks()
 window.onload = function() {
     tasks.forEach(taskItem => {
-        //Criar elementos HTML para cada tarefa
+        //Criar elementos HTML para caada tarefa
         const li = document.createElement("li");
         const a = document.createElement("a");
+        const div = document.createElement("div");
         const spanEdit = document.createElement("span");
-        const i = document.createElement("i");
+        const spanDelet = document.createElement("span");
+        const iEdit = document.createElement("i");
+        const iDelet = document.createElement("i")
         //Configurar classes e atributos
         li.className = "list-item";
         a.textContent = taskItem.name;
-        spanEdit.dataset.id = taskItem.id;
+        //Função de cada span
         spanEdit.onclick = function() {
-           selectItem('modalEditTask', taskItem.id);
-        }
-        i.className = "fa-regular fa-pen-to-square";
+            selectItem('modalEditTask', taskItem.id);
+        };
+        spanDelet.onclick = function(){
+            modalDeletTask('modalDeletTask', taskItem.id);
+        };
+        //Class dos icones para cada ação
+        iEdit.className = "fa-regular fa-pen-to-square";
+        iDelet.className = "fa-regular fa-trash-can"; 
         //Criado a estrutura e inserido na lista
         list.appendChild(li);
         li.appendChild(a);
-        a.appendChild(spanEdit);
-        spanEdit.appendChild(i);
+        a.appendChild(div);
+        div.appendChild(spanEdit);
+        div.appendChild(spanDelet);
+        spanEdit.appendChild(iEdit);
+        spanDelet.appendChild(iDelet);
     });
 };
 
@@ -96,6 +107,10 @@ function editTask(itemId){
             reloadPage();
         }
     });
+}
+
+function modalDeletTask(id){
+    console.log(id);
 }
 
 //função para salvar as tarefas no localStorage
