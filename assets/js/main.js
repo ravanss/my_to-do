@@ -35,7 +35,7 @@ window.onload = function() {
         a.textContent = taskItem.name;
         //Função de cada span
         spanEdit.onclick = function() {
-            selectItem('modalEditTask', taskItem.id);
+            selectItem('modalEditTask', taskItem .id);
         };
         spanDelet.onclick = function(){
             modalDeletTask('modalDeletTask', taskItem.id);
@@ -109,8 +109,20 @@ function editTask(itemId){
     });
 }
 
-function modalDeletTask(id){
+function modalDeletTask(modalDeletTask, id){
+    const modalID = modalDeletTask;
+    let item = "";
+    tasks.forEach(taskItem => {
+        if (taskItem.id === id) {
+            return item = taskItem.name;
+        }
+            console.log(item);
+    });
+    //Alterando ID do modal
+    modal.setAttribute('id', modalID);
+    console.log(modalID);
     console.log(id);
+
 }
 
 //função para salvar as tarefas no localStorage
