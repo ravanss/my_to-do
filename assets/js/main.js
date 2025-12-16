@@ -123,14 +123,17 @@ function modalDeletTask(modalDeletTask, id){
     //Alterando informações do modal
     let modalDelet = new bootstrap.Modal(modal);
     let modalDeletTitle = modal.querySelector('.modal-title');
-    let modalDeletInput = modal.querySelector('#task-input');
-    let modalDeletClick = modal.querySelector('#add-task');
+    let modalDeletInput = modal.querySelector('.input-group');
+    //let modalDeletClick = modal.querySelector('#add-task');
     modalDeletTitle.textContent = `Excluido a tarefa: ${item}`;
-    modalDeletInput.value = item;
-    modalDeletClick.setAttribute('onclick', 'deletTask(' + itemId + ')');
+    modalDeletInput.innerHTML = "<button class='btn btn-danger' onclick='deletTask(" + id + ")'>excluir</button>";
+    //modalDeletClick.setAttribute('onclick', 'deletTask(' + id + ')');
     //exibir o modal
     modalDelet.show();
+}
 
+function deletTask(itemId){
+    console.log(itemId);
 }
 
 //função para salvar as tarefas no localStorage
