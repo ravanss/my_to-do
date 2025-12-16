@@ -120,8 +120,16 @@ function modalDeletTask(modalDeletTask, id){
     });
     //Alterando ID do modal
     modal.setAttribute('id', modalID);
-    console.log(modalID);
-    console.log(id);
+    //Alterando informações do modal
+    let modalDelet = new bootstrap.Modal(modal);
+    let modalDeletTitle = modal.querySelector('.modal-title');
+    let modalDeletInput = modal.querySelector('#task-input');
+    let modalDeletClick = modal.querySelector('#add-task');
+    modalDeletTitle.textContent = `Excluido a tarefa: ${item}`;
+    modalDeletInput.value = item;
+    modalDeletClick.setAttribute('onclick', 'deletTask(' + itemId + ')');
+    //exibir o modal
+    modalDelet.show();
 
 }
 
