@@ -116,7 +116,6 @@ function modalDeletTask(modalDeletTask, id){
         if (taskItem.id === id) {
             return item = taskItem.name;
         }
-            console.log(item);
     });
     //Alterando ID do modal
     modal.setAttribute('id', modalID);
@@ -124,16 +123,22 @@ function modalDeletTask(modalDeletTask, id){
     let modalDelet = new bootstrap.Modal(modal);
     let modalDeletTitle = modal.querySelector('.modal-title');
     let modalDeletInput = modal.querySelector('.input-group');
-    //let modalDeletClick = modal.querySelector('#add-task');
     modalDeletTitle.textContent = `Excluido a tarefa: ${item}`;
     modalDeletInput.innerHTML = "<button class='btn btn-danger' onclick='deletTask(" + id + ")'>excluir</button>";
-    //modalDeletClick.setAttribute('onclick', 'deletTask(' + id + ')');
     //exibir o modal
     modalDelet.show();
 }
 
 function deletTask(itemId){
-    console.log(itemId);
+    tasks.forEach(taskItem => {
+        if (taskItem.id === itemId) {
+            tasks.splice(taskItem, 1);
+            salveTasks(tasks);
+            alert("Tarefa excluida com sucesso!");
+            closeModal(modalDeletTask);
+            reloadPage();
+        }
+    });
 }
 
 //função para salvar as tarefas no localStorage
