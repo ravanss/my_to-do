@@ -51,6 +51,17 @@ body{
     margin: 0 5px;
 }
 
+.modal .btn-danger{
+    display: none;
+}
+
+#modalDeletTask .input-group input, #modalDeletTask .input-group #add-task{
+    display: none;
+}
+
+#modalDeletTask .input-group .btn-danger{
+    display: block;
+}
 
 #add-button{
     position: fixed;

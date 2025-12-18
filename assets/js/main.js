@@ -110,6 +110,7 @@ function editTask(itemId){
 }
 
 function modalDeletTask(modalDeletTask, id){
+    let btn = 0;
     const modalID = modalDeletTask;
     let item = "";
     tasks.forEach(taskItem => {
@@ -123,9 +124,15 @@ function modalDeletTask(modalDeletTask, id){
     let modalDelet = new bootstrap.Modal(modal);
     let modalDeletTitle = modal.querySelector('.modal-title');
     let modalDeletInput = modal.querySelector('.input-group');
+    if (btn <= 0) {
+        let btnDelet = document.createElement("div");
+        modalDeletInput.appendChild(btnDelet);
+        btnDelet.innerHTML = "<button class='btn btn-danger' onclick='deletTask(" + id + ")'>excluir</button>";
+    }
     modalDeletTitle.textContent = `Excluido a tarefa: ${item}`;
-    modalDeletInput.innerHTML = "<button class='btn btn-danger' onclick='deletTask(" + id + ")'>excluir</button>";
     //exibir o modal
+    btn + 1;
+    console.log(btn);
     modalDelet.show();
 }
 
@@ -135,7 +142,6 @@ function deletTask(itemId){
             tasks.splice(taskItem, 1);
             salveTasks(tasks);
             alert("Tarefa excluida com sucesso!");
-            closeModal(modalDeletTask);
             reloadPage();
         }
     });
