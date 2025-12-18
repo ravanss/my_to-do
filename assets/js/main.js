@@ -8,6 +8,7 @@ const list = document.getElementById("tasks-list");
 const modal = document.querySelector('.modal');
 //Seleciona o botão adicionar tarefa
 const btnClass = document.getElementById('add-button');
+//Contador da função de deletar
 let contador = 0;
 
 //Função para carregar as tarefas do localStorage
@@ -110,6 +111,7 @@ function editTask(itemId){
     });
 }
 
+//função para achar o id correta para fazer a deleção
 function modalDeletTask(modalDeletTask, id){
     const modalID = modalDeletTask;
     let item = "";
@@ -124,17 +126,20 @@ function modalDeletTask(modalDeletTask, id){
     let modalDelet = new bootstrap.Modal(modal);
     let modalDeletTitle = modal.querySelector('.modal-title');
     let modalDeletInput = modal.querySelector('.input-group');
+    //Regra para não criar mais de um botão de deletar
     if (contador <= 0) {
         let btnDelet = document.createElement("div");
         modalDeletInput.appendChild(btnDelet);
         btnDelet.innerHTML = "<button class='btn btn-danger' onclick='deletTask(" + id + ")'>excluir</button>";
     }
     modalDeletTitle.textContent = `Excluido a tarefa: ${item}`;
-    //exibir o modal
+    //incremetando contador global
     contador = contador + 1;
+    //exibir o modal
     modalDelet.show();
 }
 
+//função para deletar o item apos o click.
 function deletTask(itemId){
     tasks.forEach(taskItem => {
         if (taskItem.id === itemId) {
