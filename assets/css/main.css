@@ -10,6 +10,7 @@ html, body{
 body{
     font-size: 100%;
     list-style-type: none;
+    background-color: #F5F5F5;
 }
 .header{
     position: fixed;
@@ -30,14 +31,15 @@ body{
 }
 
 #tasks-list li{
-    border-bottom: 1px solid #cdcdcd;
+    border-bottom: 1px solid black;
 }
 
 #tasks-list li a{
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 10px 0px 5px 20px;
     width: 100%;
 }
 
@@ -49,6 +51,10 @@ body{
     cursor: pointer;
     font-size: 20px;
     margin: 0 5px;
+}
+.input-checkbox{
+    position: absolute;
+    left: 0;
 }
 
 .modal .btn-danger{

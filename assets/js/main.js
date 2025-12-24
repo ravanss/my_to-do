@@ -1,5 +1,5 @@
 //Limpar o localStorage (apenas para testes)
-//localStorage.clear('dados');
+//LocalStorage.clear('dados');
 //Recuperar a lista ao iniciar o app
 const tasks = loadTasks();
 //Seleciona a lista no DOM onde os itens serão inseridos dinamicamente
@@ -27,14 +27,17 @@ window.onload = function() {
         //Criar elementos HTML para caada tarefa
         const li = document.createElement("li");
         const a = document.createElement("a");
+        const input = document.createElement("input");
         const div = document.createElement("div");
         const spanEdit = document.createElement("span");
         const spanDelet = document.createElement("span");
         const iEdit = document.createElement("i");
-        const iDelet = document.createElement("i")
+        const iDelet = document.createElement("i");
         //Configurar classes e atributos
         li.className = "list-item";
         a.textContent = taskItem.name;
+        input.className = "input-checkbox";
+        input.type = "checkbox";
         //Função de cada span
         spanEdit.onclick = function() {
             selectItem('modalEditTask', taskItem .id);
@@ -42,12 +45,16 @@ window.onload = function() {
         spanDelet.onclick = function(){
             modalDeletTask('modalDeletTask', taskItem.id);
         };
+        input.onclick = function(){
+            console.log('clickou');
+        }
         //Class dos icones para cada ação
         iEdit.className = "fa-regular fa-pen-to-square";
         iDelet.className = "fa-regular fa-trash-can"; 
         //Criado a estrutura e inserido na lista
         list.appendChild(li);
         li.appendChild(a);
+        a.appendChild(input);
         a.appendChild(div);
         div.appendChild(spanEdit);
         div.appendChild(spanDelet);
@@ -111,7 +118,7 @@ function editTask(itemId){
     });
 }
 
-//função para achar o id correta para fazer a deleção
+//Função para achar o id correta para fazer a deleção
 function modalDeletTask(modalDeletTask, id){
     const modalID = modalDeletTask;
     let item = "";
@@ -139,7 +146,7 @@ function modalDeletTask(modalDeletTask, id){
     modalDelet.show();
 }
 
-//função para deletar o item apos o click.
+//Função para deletar o item apos o click.
 function deletTask(itemId){
     tasks.forEach(taskItem => {
         if (taskItem.id === itemId) {
@@ -151,7 +158,7 @@ function deletTask(itemId){
     });
 }
 
-//função para salvar as tarefas no localStorage
+//Função para salvar as tarefas no localStorage
 function salveTasks(tasksArray){
     //Salvando em Json
     const tasksJson = JSON.stringify(tasksArray);
