@@ -21,13 +21,12 @@ function loadTasks() {
     }
 }
 
-//Função para lista itens no front-end da aplicação ao carregar a página com loadTasks()
+//Função para lista itens no front-end da aplicação
 window.onload = function() {
     tasks.forEach(taskItem => {
         //Criar elementos HTML para caada tarefa
         const li = document.createElement("li");
         const a = document.createElement("a");
-        const input = document.createElement("input");
         const div = document.createElement("div");
         const spanEdit = document.createElement("span");
         const spanDelet = document.createElement("span");
@@ -36,8 +35,7 @@ window.onload = function() {
         //Configurar classes e atributos
         li.className = "list-item";
         a.textContent = taskItem.name;
-        input.className = "input-checkbox";
-        input.type = "checkbox";
+        a.setAttribute('id', taskItem.name);
         //Função de cada span
         spanEdit.onclick = function() {
             selectItem('modalEditTask', taskItem .id);
@@ -45,8 +43,8 @@ window.onload = function() {
         spanDelet.onclick = function(){
             modalDeletTask('modalDeletTask', taskItem.id);
         };
-        input.onclick = function(){
-            console.log('clickou');
+        a.onclick = function(){
+            completed(taskItem.name);
         }
         //Class dos icones para cada ação
         iEdit.className = "fa-regular fa-pen-to-square";
@@ -54,7 +52,6 @@ window.onload = function() {
         //Criado a estrutura e inserido na lista
         list.appendChild(li);
         li.appendChild(a);
-        a.appendChild(input);
         a.appendChild(div);
         div.appendChild(spanEdit);
         div.appendChild(spanDelet);
@@ -62,6 +59,12 @@ window.onload = function() {
         spanDelet.appendChild(iDelet);
     });
 };
+
+function completed(name){
+    let checkbox = document.getElementById(name);
+    checkbox.classList.add("completed");
+    console.log(checkbox);
+}
 
 //Função para adicionar uma nova tarefa
 function addTask(){
