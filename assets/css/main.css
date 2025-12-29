@@ -47,6 +47,10 @@ body{
     text-decoration: line-through blue;
 }
 
+#tasks-list li a.completed div{
+    opacity: 0.2;
+}
+
 #tasks-list li a div{
     display: flex;
 }

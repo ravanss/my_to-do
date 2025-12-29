@@ -28,14 +28,15 @@ window.onload = function() {
         const li = document.createElement("li");
         const a = document.createElement("a");
         const div = document.createElement("div");
+        const spanComplet = document.createElement("span")
         const spanEdit = document.createElement("span");
         const spanDelet = document.createElement("span");
+        const IComplet = document.createElement("i");
         const iEdit = document.createElement("i");
         const iDelet = document.createElement("i");
         //Configurar classes e atributos
         li.className = "list-item";
         a.textContent = taskItem.name;
-        a.setAttribute('id', taskItem.name);
         //Função de cada span
         spanEdit.onclick = function() {
             selectItem('modalEditTask', taskItem .id);
@@ -43,18 +44,21 @@ window.onload = function() {
         spanDelet.onclick = function(){
             modalDeletTask('modalDeletTask', taskItem.id);
         };
-        a.onclick = function(){
+        spanComplet.onclick = function(){
             completed(taskItem.name);
         }
         //Class dos icones para cada ação
+        IComplet.className = "fa-regular fa-circle-check";
         iEdit.className = "fa-regular fa-pen-to-square";
         iDelet.className = "fa-regular fa-trash-can"; 
         //Criado a estrutura e inserido na lista
         list.appendChild(li);
         li.appendChild(a);
         a.appendChild(div);
+        div.appendChild(spanComplet);
         div.appendChild(spanEdit);
         div.appendChild(spanDelet);
+        spanComplet.appendChild(IComplet);
         spanEdit.appendChild(iEdit);
         spanDelet.appendChild(iDelet);
     });
@@ -62,8 +66,7 @@ window.onload = function() {
 
 function completed(name){
     let checkbox = document.getElementById(name);
-    checkbox.classList.add("completed");
-    console.log(checkbox);
+    //checkbox.classList.add("completed");
 }
 
 //Função para adicionar uma nova tarefa
@@ -151,12 +154,14 @@ function modalDeletTask(modalDeletTask, id){
 
 //Função para deletar o item apos o click.
 function deletTask(itemId){
+    console.log(itemId);
     tasks.forEach(taskItem => {
         if (taskItem.id === itemId) {
             tasks.splice(taskItem, 1);
-            salveTasks(tasks);
+            console.log(tasks);
+            //salveTasks(tasks);
             alert("Tarefa excluida com sucesso!");
-            reloadPage();
+            //reloadPage();
         }
     });
 }
