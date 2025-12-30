@@ -154,14 +154,19 @@ function modalDeletTask(modalDeletTask, id){
 
 //Função para deletar o item apos o click.
 function deletTask(itemId){
-    console.log(itemId);
     tasks.forEach(taskItem => {
         if (taskItem.id === itemId) {
-            tasks.splice(taskItem, 1);
-            console.log(tasks);
-            //salveTasks(tasks);
+            const itemIndex = tasks.indexOf(taskItem);
+            //Verificando se o item existe no array
+            if (itemIndex > -1) {
+                tasks.splice(itemIndex, 1);
+            } else {
+                alert("Erro ao excluir a tarefa.");
+                return;
+            }
+            salveTasks(tasks);
             alert("Tarefa excluida com sucesso!");
-            //reloadPage();
+            reloadPage();
         }
     });
 }
