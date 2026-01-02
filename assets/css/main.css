@@ -41,10 +41,13 @@ body{
     align-items: center;
     padding: 10px 5px 5px;
     width: 100%;
+    text-decoration: none;
+    color: black;
 }
 
 #tasks-list li a.completed{
-    text-decoration: line-through blue;
+    text-decoration: line-through #cdcdcc;
+    color: #cdcdcd;
 }
 
 #tasks-list li a.completed div{
