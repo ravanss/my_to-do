@@ -31,6 +31,7 @@ body{
 }
 
 #tasks-list li{
+    position: relative;
     border-bottom: 1px solid black;
 }
 
@@ -40,7 +41,7 @@ body{
     justify-content: space-between;
     align-items: center;
     padding: 10px 5px 5px;
-    width: 100%;
+    width: 90%;
     text-decoration: none;
     color: black;
 }
@@ -50,15 +51,15 @@ body{
     color: #cdcdcd;
 }
 
-#tasks-list li a.completed div{
-    opacity: 0.2;
-}
-
-#tasks-list li a div{
+#tasks-list li .action-icons{
     display: flex;
+    position: absolute;
+    top: auto;
+    right: 0;
+    bottom: 3px;
 }
 
-#tasks-list li a div span{
+#tasks-list li .action-icons span{
     cursor: pointer;
     font-size: 20px;
     margin: 0 5px;

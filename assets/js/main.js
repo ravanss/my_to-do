@@ -35,6 +35,7 @@ window.onload = function() {
         //Configurar classes e atributos
         li.className = "list-item";
         a.textContent = taskItem.name;
+        div.className = "action-icons";
         //Função de cada span
         a.onclick = function(){
             completed(taskItem.name);
@@ -52,7 +53,7 @@ window.onload = function() {
         //Criado a estrutura e inserido na lista
         list.appendChild(li);
         li.appendChild(a);
-        a.appendChild(div);
+        li.appendChild(div);
         div.appendChild(spanEdit);
         div.appendChild(spanDelet);
         spanEdit.appendChild(iEdit);
