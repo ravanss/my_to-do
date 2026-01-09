@@ -38,7 +38,7 @@ window.onload = function() {
         div.className = "action-icons";
         //Função de cada span
         a.onclick = function(){
-            completed(taskItem.name);
+            completed(taskItem.name, taskItem.status);
         }
         spanEdit.onclick = function() {
             selectItem('modalEditTask', taskItem.id);
@@ -61,10 +61,26 @@ window.onload = function() {
     });
 };
 
-function completed(name){
+function completed(name, status){
     let checkbox = document.getElementById(name);
-    console.log(checkbox);
     checkbox.classList.toggle("completed");
+    console.log(status);
+    if (status === false) {
+        status = true;
+    } else if (status === true) {
+        status = false;
+    } else {
+        alert("Erro ao atualizar o status da tarefa.");
+        return;
+    }
+    tasks.forEach(taskItem => {
+        if (taskItem.name === name) {
+            taskItem.status = status;
+            salveTasks(tasks);
+        }
+    });
+    console.log(status);
+    console.log(tasks);
 }
 
 //Função para adicionar uma nova tarefa
@@ -73,7 +89,7 @@ function addTask(){
     const newItem = itemReceived.value.trim();
     const id = tasks.length + 1;
     if (newItem != "") {
-        tasks.unshift({ id: id, name: newItem});
+        tasks.unshift({ id: id, name: newItem, status: false});
         salveTasks(tasks);
         alert("Tarefa adicionada com sucesso!");
         closeModal(modalAddTask);
