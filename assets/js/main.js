@@ -64,7 +64,6 @@ window.onload = function() {
 function completed(name, status){
     let checkbox = document.getElementById(name);
     checkbox.classList.toggle("completed");
-    console.log(status);
     if (status === false) {
         status = true;
     } else if (status === true) {
@@ -83,11 +82,16 @@ function completed(name, status){
     console.log(tasks);
 }
 
+//Função para gerar ID numérico aleatório
+function gerarIdNumericoAleatorio(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 //Função para adicionar uma nova tarefa
 function addTask(){
+    const id = gerarIdNumericoAleatorio(1, 10000);
     const itemReceived = document.getElementById("task-input");
     const newItem = itemReceived.value.trim();
-    const id = tasks.length + 1;
     if (newItem != "") {
         tasks.unshift({ id: id, name: newItem, status: false});
         salveTasks(tasks);
