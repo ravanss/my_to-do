@@ -10,6 +10,7 @@ const modal = document.querySelector('.modal');
 const btnClass = document.getElementById('add-button');
 //Contador da função de deletar
 let contador = 0;
+console.log(tasks);
 
 //Função para carregar as tarefas do localStorage
 function loadTasks() {
@@ -36,10 +37,6 @@ window.onload = function() {
         li.className = "list-item";
         a.textContent = taskItem.name;
         div.className = "action-icons";
-        //Verifica o status da tarefa para marcar como completa ou não
-        if (taskItem.status === true) {
-            a.className = "completed";
-        }
         //Função de cada span
         a.onclick = function(){
             completed(taskItem.name, taskItem.status);
@@ -62,12 +59,14 @@ window.onload = function() {
         div.appendChild(spanDelet);
         spanEdit.appendChild(iEdit);
         spanDelet.appendChild(iDelet);
+        //Validando o status da tarefa
+        validatedStatus(taskItem.name, taskItem.status);
     });
 };
 
 function completed(name, status){
-    let checkbox = document.getElementById(name);
-    checkbox.classList.toggle("completed");
+    let validated = document.getElementById(name);
+    //Verificando e atualizando o status da tarefa
     if (status === false) {
         status = true;
     } else if (status === true) {
@@ -76,14 +75,25 @@ function completed(name, status){
         alert("Erro ao atualizar o status da tarefa.");
         return;
     }
+    //Atualizando o status no array de tarefas
     tasks.forEach(taskItem => {
         if (taskItem.name === name) {
             taskItem.status = status;
             salveTasks(tasks);
         }
     });
-    console.log(status);
     console.log(tasks);
+    //Atualizando o status no front-end
+    validatedStatus(name, status);
+}
+
+function validatedStatus(name, status){
+    let validated = document.getElementById(name);
+    if (status === true) {
+        validated.classList.add("completed");
+    } else {
+        validated.classList.remove("completed");
+    };
 }
 
 //Função para gerar ID numérico aleatório
