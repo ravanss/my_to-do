@@ -65,7 +65,6 @@ body{
     margin: 0 5px;
 }
 
-
 .modal .btn-danger{
     display: none;
 }
@@ -77,7 +76,6 @@ body{
 #modalDeletTask .input-group .btn-danger{
     display: block;
 }
-
 
 #add-button{
     position: fixed;

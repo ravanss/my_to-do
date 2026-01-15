@@ -36,6 +36,10 @@ window.onload = function() {
         li.className = "list-item";
         a.textContent = taskItem.name;
         div.className = "action-icons";
+        //Verifica o status da tarefa para marcar como completa ou não
+        if (taskItem.status === true) {
+            a.className = "completed";
+        }
         //Função de cada span
         a.onclick = function(){
             completed(taskItem.name, taskItem.status);
