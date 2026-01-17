@@ -10,7 +10,7 @@ const modal = document.querySelector('.modal');
 const btnClass = document.getElementById('add-button');
 //Contador da função de deletar
 let contador = 0;
-console.log(tasks);
+//console.log(tasks);
 
 //Função para carregar as tarefas do localStorage
 function loadTasks() {
@@ -64,6 +64,7 @@ window.onload = function() {
     });
 };
 
+//Função para marcar a tarefa como completa ou incompleta
 function completed(name, status){
     let validated = document.getElementById(name);
     //Verificando e atualizando o status da tarefa
@@ -87,6 +88,7 @@ function completed(name, status){
     validatedStatus(name, status);
 }
 
+//Função para validar o status da tarefa ao carregar a página
 function validatedStatus(name, status){
     let validated = document.getElementById(name);
     if (status === true) {
