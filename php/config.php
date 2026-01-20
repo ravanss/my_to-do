@@ -1,5 +1,5 @@
-//Configuration file for PHP settings
 <?php
+//Configuration file for PHP settings
 $host = 'localhost';
 $username = 'root';
 $password = '';
