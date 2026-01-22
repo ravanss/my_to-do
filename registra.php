@@ -1,7 +1,6 @@
 <?php
 include 'header.php';
 require_once 'php/config.php';
-session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['nome'];
@@ -25,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="container">
             <div class="row">
                 <div class="col-12"></div>
-                    <form action="" method="post">
+                    <form action="login.php" method="post">
                         <div class="input-group">
                             <input type="text" name="nome" class="form-control" placeholder="Adicione seu nome" required>
                         </div>
