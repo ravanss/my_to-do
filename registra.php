@@ -43,5 +43,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </section>
 </main>
+<section>
+    <div>
+        <a href="login.php">Já possui uma conta? Faça login aqui.</a>
+    </div>
+</section>
 <?php
 include 'footer.php';
