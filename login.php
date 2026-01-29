@@ -10,13 +10,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt = $pdo->prepare("SELECT * FROM usuarios WHERE email = ?");
     $stmt->execute([$email]);
     $user = $stmt->fetch();
-    if ($user && password_verify($password, $user['senha'])) {
-        $_SESSION['user_id'] = $user['id'];
-        header('Location: app.php');
-        exit();
-    } else{
-        echo "<script>alert('Email ou senha incorretos.');</script>";
-    }
+    
+        
 }
 ?>
 
