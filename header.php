@@ -11,6 +11,12 @@
     <link rel="stylesheet" href="assets/css/main.css">
   </head>
   <body class="home">
+    <?php 
+      require_once 'php/config.php';
+      session_start();
+ 
+    ?>
+
     <header class="header">
       <div class="container">
         <div class="row">
@@ -25,3 +31,4 @@
         </div>
       </div>
     </header>
+    <?php ?>
