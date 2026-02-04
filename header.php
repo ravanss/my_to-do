@@ -1,3 +1,6 @@
+<?php 
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -11,15 +14,11 @@
     <link rel="stylesheet" href="assets/css/main.css">
   </head>
   <body class="home">
-    <?php 
-      session_start();
-    
-    ?>
     <header class="header">
       <div class="container">
         <div class="row">
           <div class="col-8">
-            <h1 class="user-name">Olá <?php //echo $_SESSION['usuario_nome']; ?></br>O que você tem para fazer hoje?</h1>
+            <h1 class="user-name">Olá <?php echo $_SESSION['usuario_name']; ?></br>O que você tem para fazer hoje?</h1>
           </div>
           <div class="col-4 text-center">
             <div class="user-img">

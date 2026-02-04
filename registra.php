@@ -1,5 +1,4 @@
 <?php
-include 'header.php';
 require_once 'php/config.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -17,6 +16,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "<script>alert('Erro ao registrar: " . $e->getMessage() . "');</script>";
     };
 }
+
+include 'header.php';
 ?>
 
 <main class="main">

@@ -1,6 +1,4 @@
 <?php
-include 'header.php';
-//session_start();
 require_once 'php/config.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -13,20 +11,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Verifica as credenciais do usuário
     foreach ($users as $user) {
-        if ($user['email'] === $email) {
+        if ($email === $user['email'] && password_verify($password, $user['senha'])) {
             echo "login bem-sucedido!";
-            echo $user['nome'];
-            echo $user['senha'];
-            echo $email;
+            // Armazena informações do usuário na sessão
+            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['usuario_name'] = $user['nome'];
+            // Redireciona para a página principal do aplicativo
+            header("Location: app.php");
+            exit();
         } else {
             echo "email ou senha incorretos!";
-            echo $user['email'];
-            echo $email;
         }
     }
-
-
 }
+
+include 'header.php';
 ?>
 
 <main class="main">
