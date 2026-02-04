@@ -19,6 +19,7 @@ body{
     width: 100%;
     z-index: 999;
     padding: 15px;
+    padding-top: 40px;
 }
 .header .user-img img{
     width: 55px;

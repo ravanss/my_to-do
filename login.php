@@ -1,17 +1,31 @@
 <?php
 include 'header.php';
-session_start();
+//session_start();
 require_once 'php/config.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];
     $password = $_POST['senha'];
 
-    $stmt = $pdo->prepare("SELECT * FROM usuarios WHERE email = ?");
-    $stmt->execute([$email]);
-    $user = $stmt->fetch();
-    
-        
+    $stmt = $conn->prepare("SELECT * FROM usuarios" );
+    $stmt->execute();
+    $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    // Verifica as credenciais do usuário
+    foreach ($users as $user) {
+        if ($user['email'] === $email) {
+            echo "login bem-sucedido!";
+            echo $user['nome'];
+            echo $user['senha'];
+            echo $email;
+        } else {
+            echo "email ou senha incorretos!";
+            echo $user['email'];
+            echo $email;
+        }
+    }
+
+
 }
 ?>
 
@@ -20,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="container">
             <div class="row">
                 <div class="col-12"></div>
-                    <form action="app.php" method="post">
+                    <form action="" method="post">
                         <div class="input-group">
                             <input type="email" name="email" class="form-control" placeholder="Adicione seu email" required>
                         </div>
