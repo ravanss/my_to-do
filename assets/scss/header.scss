@@ -1,0 +1,16 @@
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    padding: 15px;
+    padding-top: 40px;
+}
+.header .user-img img{
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border: 2px solid #0a58ca;
+    padding: 2px;
+}

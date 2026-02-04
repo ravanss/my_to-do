@@ -1,96 +1,124 @@
-*, *:after,*:before {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-}
-html, body{
-    overflow-x: hidden;
-}
-body{
-    font-size: 100%;
-    list-style-type: none;
-    background-color: #F5F5F5;
-}
-.header{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 999;
-    padding: 15px;
-    padding-top: 40px;
-}
-.header .user-img img{
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    border: 2px solid #0a58ca;
-    padding: 2px;
+/* SCSS HEX */
+/* SCSS Gradient 
+$gradient-top: linear-gradient(0deg, #134611ff, #3e8914ff, #3da35dff, #96e072ff, #e8fccfff, #f2fbe0ff, #d4e9ccff, #b6d7b8ff, #79b28fff, #00693eff);
+$gradient-right: linear-gradient(90deg, #134611ff, #3e8914ff, #3da35dff, #96e072ff, #e8fccfff, #f2fbe0ff, #d4e9ccff, #b6d7b8ff, #79b28fff, #00693eff);
+$gradient-bottom: linear-gradient(180deg, #134611ff, #3e8914ff, #3da35dff, #96e072ff, #e8fccfff, #f2fbe0ff, #d4e9ccff, #b6d7b8ff, #79b28fff, #00693eff);
+$gradient-left: linear-gradient(270deg, #134611ff, #3e8914ff, #3da35dff, #96e072ff, #e8fccfff, #f2fbe0ff, #d4e9ccff, #b6d7b8ff, #79b28fff, #00693eff);
+$gradient-top-right: linear-gradient(45deg, #134611ff, #3e8914ff, #3da35dff, #96e072ff, #e8fccfff, #f2fbe0ff, #d4e9ccff, #b6d7b8ff, #79b28fff, #00693eff);
+$gradient-bottom-right: linear-gradient(135deg, #134611ff, #3e8914ff, #3da35dff, #96e072ff, #e8fccfff, #f2fbe0ff, #d4e9ccff, #b6d7b8ff, #79b28fff, #00693eff);
+$gradient-top-left: linear-gradient(225deg, #134611ff, #3e8914ff, #3da35dff, #96e072ff, #e8fccfff, #f2fbe0ff, #d4e9ccff, #b6d7b8ff, #79b28fff, #00693eff);
+$gradient-bottom-left: linear-gradient(315deg, #134611ff, #3e8914ff, #3da35dff, #96e072ff, #e8fccfff, #f2fbe0ff, #d4e9ccff, #b6d7b8ff, #79b28fff, #00693eff);
+$gradient-radial: radial-gradient(#134611ff, #3e8914ff, #3da35dff, #96e072ff, #e8fccfff, #f2fbe0ff, #d4e9ccff, #b6d7b8ff, #79b28fff, #00693eff);
+*/
+@import '/assets/css/reset.css';
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  padding: 15px;
+  padding-top: 40px;
 }
 
-.main{
-    padding-top: 90px;
+.header .user-img img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: 2px solid #0a58ca;
+  padding: 2px;
 }
 
-#tasks-list{
-    margin: 10px 0;
-    padding-bottom: 10px;
+*, *:after, *:before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
 }
 
-#tasks-list li{
-    position: relative;
-    border-bottom: 1px solid black;
-    cursor: pointer;
+html, body {
+  overflow-x: hidden;
 }
 
-#tasks-list li a{
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 5px 5px;
-    width: 90%;
-    text-decoration: none;
-    color: black;
+body {
+  font-size: 100%;
+  list-style-type: none;
+  background-color: #F5F5F5;
 }
 
-#tasks-list li a.completed{
-    text-decoration: line-through #cdcdcc;
-    color: #cdcdcd;
+.main {
+  padding-top: 90px;
 }
 
-#tasks-list li .action-icons{
-    display: flex;
-    position: absolute;
-    top: auto;
-    right: 0;
-    bottom: 3px;
+#tasks-list {
+  margin: 10px 0;
+  padding-bottom: 10px;
 }
 
-#tasks-list li .action-icons span{
-    cursor: pointer;
-    font-size: 20px;
-    margin: 0 5px;
+#tasks-list li {
+  position: relative;
+  border-bottom: 1px solid black;
+  cursor: pointer;
 }
 
-.modal .btn-danger{
-    display: none;
+#tasks-list li a {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px 5px 5px;
+  width: 90%;
+  text-decoration: none;
+  color: black;
 }
 
-#modalDeletTask .input-group input, #modalDeletTask .input-group #add-task{
-    display: none;
+#tasks-list li a.completed {
+  -webkit-text-decoration: line-through #cdcdcc;
+          text-decoration: line-through #cdcdcc;
+  color: #cdcdcd;
 }
 
-#modalDeletTask .input-group .btn-danger{
-    display: block;
+#tasks-list li .action-icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: auto;
+  right: 0;
+  bottom: 3px;
 }
 
-#add-button{
-    position: fixed;
-    top: auto;
-    bottom: 50px;
-    left: auto;
-    right: 50px;
-    z-index: 999;
+#tasks-list li .action-icons span {
+  cursor: pointer;
+  font-size: 20px;
+  margin: 0 5px;
 }
+
+.modal .btn-danger {
+  display: none;
+}
+
+#modalDeletTask .input-group input, #modalDeletTask .input-group #add-task {
+  display: none;
+}
+
+#modalDeletTask .input-group .btn-danger {
+  display: block;
+}
+
+#add-button {
+  position: fixed;
+  top: auto;
+  bottom: 50px;
+  left: auto;
+  right: 50px;
+  z-index: 999;
+}
+/*# sourceMappingURL=main.css.map */

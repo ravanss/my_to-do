@@ -10,7 +10,6 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/main.css">
   </head>
   <body class="home">
@@ -18,7 +17,7 @@
       <div class="container">
         <div class="row">
           <div class="col-8">
-            <h1 class="user-name">Olá <?php echo $_SESSION['usuario_name']; ?></br>O que você tem para fazer hoje?</h1>
+            <h1 class="user-name">Olá <?php //echo $_SESSION['usuario_name']; ?></br>O que você tem para fazer hoje?</h1>
           </div>
           <div class="col-4 text-center">
             <div class="user-img">
