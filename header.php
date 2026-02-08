@@ -1,5 +1,6 @@
 <?php 
   session_start();
+  include 'php/function.php';
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -12,7 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
   </head>
-  <body class="home">
+  <body class="<?php body_class()?>">
     <header class="header">
       <div class="container">
         <div class="row">
