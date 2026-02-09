@@ -14,6 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($email === $user['email'] && password_verify($password, $user['senha'])) {
             echo "login bem-sucedido!";
             // Armazena informações do usuário na sessão
+            session_start();
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['usuario_name'] = $user['nome'];
             // Redireciona para a página principal do aplicativo
