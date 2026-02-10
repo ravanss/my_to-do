@@ -1,13 +1,19 @@
-.modal .btn-danger{
-    display: none;
+.modal{
+    .btn-danger{
+        display: none;
+    }
 }
 
 #modalDeletTask .input-group input, #modalDeletTask .input-group #add-task{
     display: none;
 }
 
-#modalDeletTask .input-group .btn-danger{
-    display: block;
+#modalDeletTask{
+    .input-group{
+        .btn-danger{
+            display: block;
+        }
+     }
 }
 
 #add-button{
