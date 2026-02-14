@@ -39,15 +39,13 @@ include 'header.php';
                             <button type="submit" class="btn btn-primary">Registrar</button>
                         </div>
                     </form>
+                    <div class="fast-link">
+                        <a href="login.php">Já possui uma conta? Faça login aqui.</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 </main>
-<section>
-    <div>
-        <a href="login.php">Já possui uma conta? Faça login aqui.</a>
-    </div>
-</section>
 <?php
 include 'footer.php';

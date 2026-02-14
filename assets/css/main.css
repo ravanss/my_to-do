@@ -18,15 +18,16 @@ $gradient-radial: radial-gradient(#134611ff, #3e8914ff, #3da35dff, #96e072ff, #e
   width: 100%;
   z-index: 999;
   padding: 15px;
-  padding-top: 40px;
 }
-
 .header .user-img img {
   width: 55px;
   height: 55px;
   border-radius: 50%;
   border: 2px solid #0a58ca;
   padding: 2px;
+}
+.header .user-name {
+  font-size: 20px;
 }
 
 *, *:after, *:before {
@@ -99,6 +100,14 @@ body {
   cursor: pointer;
   font-size: 20px;
   margin: 0 5px;
+}
+
+.registra .header {
+  display: none;
+}
+
+.login .header {
+  display: none;
 }
 
 .modal .btn-danger {

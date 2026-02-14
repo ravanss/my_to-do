@@ -18,7 +18,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['usuario_name'] = $user['nome'];
             // Redireciona para a página principal do aplicativo
-            header("Location: app.php");
             exit();
         } else {
             echo "email ou senha incorretos!";
