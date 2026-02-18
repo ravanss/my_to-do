@@ -1,27 +1,23 @@
 <?php
+session_start();
 require_once 'php/config.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];
     $password = $_POST['senha'];
 
-    $stmt = $conn->prepare("SELECT * FROM usuarios" );
-    $stmt->execute();
-    $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $sql = "SELECT * FROM usuarios WHERE email = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute([$email]);
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+    if ($user && password_verify($password, $user['senha'])) {
 
-    // Verifica as credenciais do usuário
-    foreach ($users as $user) {
-        if ($email === $user['email'] && password_verify($password, $user['senha'])) {
-            echo "login bem-sucedido!";
-            // Armazena informações do usuário na sessão
-            session_start();
-            $_SESSION['user_id'] = $user['id'];
-            $_SESSION['usuario_name'] = $user['nome'];
-            // Redireciona para a página principal do aplicativo
-            exit();
-        } else {
-            echo "email ou senha incorretos!";
-        }
+        $_SESSION['user_id'] = $user['id'];
+        $_SESSION['usuario_name'] = $user['nome'];
+        header("Location: app.php");
+        exit();
+    } else {
+        echo "acesso negado";
     }
 }
 
@@ -33,7 +29,7 @@ include 'header.php';
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <form action="app.php" method="post">
+                    <form action="" method="post">
                         <div class="input-group">
                             <input type="email" name="email" class="form-control" placeholder="Adicione seu email" required>
                         </div>
