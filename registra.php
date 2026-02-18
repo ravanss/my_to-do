@@ -20,11 +20,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 include 'header.php';
 ?>
 
+
 <main class="main">
     <section>
         <div class="container">
             <div class="row">
-                <div class="col-12"></div>
+                <div class="col-8">
+                    <h5>Registre-se</h5>
                     <form action="login.php" method="post">
                         <div class="input-group">
                             <input type="text" name="nome" class="form-control" placeholder="Adicione seu nome" required>
@@ -42,6 +44,9 @@ include 'header.php';
                     <div class="fast-link">
                         <a href="login.php">Já possui uma conta? Faça login aqui.</a>
                     </div>
+                </div>
+                <div class="col-4">
+
                 </div>
             </div>
         </div>

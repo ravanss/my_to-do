@@ -10,11 +10,12 @@ html, body{
 body{
     font-size: 100%;
     list-style-type: none;
-    background-color: #F5F5F5;
+    background-color: $beige;
 }
 
 .main{
     padding-top: 90px;
+    width: 100%;
 }
 
 #tasks-list{
@@ -58,14 +59,32 @@ body{
     margin: 0 5px;
 }
 
+// Registration page styles
 .registra{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     .header{
         display: none;
     }
+    .main{
+        margin: 0;
+        padding: 0;
+    }
 }
 
+
+// Login page styles
 .login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     .header{
         display: none;
+    }
+    .main{
+        margin: 0;
+        padding: 0;
     }
 }

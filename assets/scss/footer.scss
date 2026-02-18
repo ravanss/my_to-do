@@ -1,26 +1,32 @@
-.modal{
-    .btn-danger{
+.footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    .modal{
+        .btn-danger{
+            display: none;
+        }
+    }
+
+    #modalDeletTask .input-group input, #modalDeletTask .input-group #add-task{
         display: none;
     }
-}
 
-#modalDeletTask .input-group input, #modalDeletTask .input-group #add-task{
-    display: none;
-}
-
-#modalDeletTask{
-    .input-group{
-        .btn-danger{
-            display: block;
+    #modalDeletTask{
+        .input-group{
+            .btn-danger{
+                display: block;
+            }
         }
-     }
-}
+    }
 
-#add-button{
-    position: fixed;
-    top: auto;
-    bottom: 50px;
-    left: auto;
-    right: 50px;
-    z-index: 999;
+    #add-button{
+        position: fixed;
+        top: auto;
+        bottom: 50px;
+        left: auto;
+        right: 50px;
+        z-index: 999;
+    }
 }

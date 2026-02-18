@@ -1,4 +1,16 @@
     <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-4 text-center">
+            <h6>Social</h6>
+          </div>
+          <div class="col-4 text-center">
+            <h6>Contato</h6>
+          </div>
+          <div class="col-4 text-center">
+            <p>&copy; 2025 My To-Do List. Todos os direitos reservados.</p>
+          </div>
+        </div>
       <!-- Button trigger modal -->
       <button id="add-button" type="button" class="btn btn-primary btn-custom" data-bs-toggle="modal" data-bs-target="#modalAddTask">
           <span><i class="fa-solid fa-plus"></i></span>

@@ -45,11 +45,12 @@ html, body {
 body {
   font-size: 100%;
   list-style-type: none;
-  background-color: #F5F5F5;
+  background-color: #f2fbe0;
 }
 
 .main {
   padding-top: 90px;
+  width: 100%;
 }
 
 #tasks-list {
@@ -102,27 +103,61 @@ body {
   margin: 0 5px;
 }
 
+.registra {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
 .registra .header {
   display: none;
 }
+.registra .main {
+  margin: 0;
+  padding: 0;
+}
 
+.login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
 .login .header {
   display: none;
 }
-
-.modal .btn-danger {
-  display: none;
+.login .main {
+  margin: 0;
+  padding: 0;
 }
 
-#modalDeletTask .input-group input, #modalDeletTask .input-group #add-task {
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.footer .modal .btn-danger {
   display: none;
 }
-
-#modalDeletTask .input-group .btn-danger {
+.footer #modalDeletTask .input-group input, .footer #modalDeletTask .input-group #add-task {
+  display: none;
+}
+.footer #modalDeletTask .input-group .btn-danger {
   display: block;
 }
-
-#add-button {
+.footer #add-button {
   position: fixed;
   top: auto;
   bottom: 50px;
