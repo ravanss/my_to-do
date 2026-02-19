@@ -40,6 +40,7 @@ $gradient-radial: radial-gradient(#134611ff, #3e8914ff, #3da35dff, #96e072ff, #e
 
 html, body {
   overflow-x: hidden;
+  font-family: "Arial", sans-serif;
 }
 
 body {
@@ -51,6 +52,33 @@ body {
 .main {
   padding-top: 90px;
   width: 100%;
+}
+.main h1, .main h2, .main h3, .main h4, .main h5, .main h6 {
+  color: black;
+}
+.main form .input-group {
+  margin-bottom: 10px;
+}
+.main form .input-group .form-control {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid black;
+  border-radius: 0;
+}
+.main form .input-group .form-control:hover, .main form .input-group .form-control:active, .main form .input-group .form-control:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+.main form .btn-custom {
+  background-color: #96e072;
+  border: 1px solid white;
+  color: black;
+  padding: 5px 15px;
+  cursor: pointer;
+}
+.main form .btn-custom:hover {
+  background-color: #3da35d;
+  color: #f2fbe0;
 }
 
 #tasks-list {

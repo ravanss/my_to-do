@@ -25,7 +25,7 @@ include 'header.php';
     <section>
         <div class="container">
             <div class="row">
-                <div class="col-8">
+                <div class="col-6">
                     <h5>Registre-se</h5>
                     <form action="login.php" method="post">
                         <div class="input-group">
@@ -38,15 +38,17 @@ include 'header.php';
                             <input type="password" name="senha" class="form-control" placeholder="Adicione sua senha" required>
                         </div>
                         <div class="input-group">
-                            <button type="submit" class="btn btn-primary">Registrar</button>
+                            <button type="submit" class="btn btn-primary btn-custom">Registrar</button>
                         </div>
                     </form>
                     <div class="fast-link">
                         <a href="login.php">Já possui uma conta? Faça login aqui.</a>
                     </div>
                 </div>
-                <div class="col-4">
-
+                <div class="col-6">
+                    <div class="register-img">
+                        <img src="assets/img/register.png" alt="Imagem de registro">
+                    </div>
                 </div>
             </div>
         </div>
