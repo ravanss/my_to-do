@@ -56,29 +56,44 @@ body {
 .main h1, .main h2, .main h3, .main h4, .main h5, .main h6 {
   color: black;
 }
-.main form .input-group {
+.main .form {
+  -webkit-box-shadow: 0px 0px 10px 2px rgba(255, 255, 255, 0.25);
+          box-shadow: 0px 0px 10px 2px rgba(255, 255, 255, 0.25);
+  padding: 15px;
+  border: 1px solid black;
+  border-radius: 15px;
+}
+.main .form form .input-group {
   margin-bottom: 10px;
 }
-.main form .input-group .form-control {
+.main .form form .input-group .form-control {
   background-color: transparent;
   border: none;
   border-bottom: 1px solid black;
   border-radius: 0;
 }
-.main form .input-group .form-control:hover, .main form .input-group .form-control:active, .main form .input-group .form-control:focus {
+.main .form form .input-group .form-control:hover, .main .form form .input-group .form-control:active, .main .form form .input-group .form-control:focus {
   -webkit-box-shadow: none;
           box-shadow: none;
 }
-.main form .btn-custom {
+.main .form form .btn-custom {
   background-color: #96e072;
   border: 1px solid white;
   color: black;
   padding: 5px 15px;
   cursor: pointer;
 }
-.main form .btn-custom:hover {
+.main .form form .btn-custom:hover {
   background-color: #3da35d;
   color: #f2fbe0;
+}
+.main .form .fast-link a {
+  color: black;
+  font-size: 14px;
+  text-decoration: none;
+}
+.main .form .fast-link a:hover {
+  color: #134611;
 }
 
 #tasks-list {

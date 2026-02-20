@@ -29,17 +29,19 @@ include 'header.php';
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <form action="" method="post">
-                        <div class="input-group">
-                            <input type="email" name="email" class="form-control" placeholder="Adicione seu email" required>
-                        </div>
-                        <div class="input-group">
-                            <input type="password" name="senha" class="form-control" placeholder="Adicione sua senha" required>
-                        </div>
-                        <div class="input-group">
-                            <button type="submit" class="btn btn-primary">Acessar</button>
-                        </div>
+                    <div class="form">
+                        <form action="" method="post">
+                            <div class="input-group">
+                                <input type="email" name="email" class="form-control" placeholder="Adicione seu email" required>
+                            </div>
+                            <div class="input-group">
+                                <input type="password" name="senha" class="form-control" placeholder="Adicione sua senha" required>
+                            </div>
+                            <div class="input-group">
+                                <button type="submit" class="btn btn-primary btn-custom">Acessar</button>
+                            </div>
                     </form>
+                    </div>
                 </div>
             </div>
         </div>
