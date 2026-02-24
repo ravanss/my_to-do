@@ -23,11 +23,20 @@ $gradient-radial: radial-gradient(#134611ff, #3e8914ff, #3da35dff, #96e072ff, #e
   width: 55px;
   height: 55px;
   border-radius: 50%;
-  border: 2px solid #0a58ca;
+  border: 2px solid #3e8914;
   padding: 2px;
 }
 .header .user-name {
   font-size: 20px;
+}
+.header .btn-exit {
+  background-color: #134611;
+  margin-left: 10px;
+  color: white;
+}
+.header .btn-exit:hover, .header .btn-exit:focus, .header .btn-exit:active {
+  background-color: #79b28f;
+  color: #f2fbe0;
 }
 
 *, *:after, *:before {
