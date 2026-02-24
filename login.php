@@ -1,5 +1,4 @@
 <?php
-session_start();
 require_once 'php/config.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -11,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->execute([$email]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
     if ($user && password_verify($password, $user['senha'])) {
-
+        session_start();
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['usuario_name'] = $user['nome'];
         header("Location: app.php");
