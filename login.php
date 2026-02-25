@@ -29,6 +29,7 @@ include 'header.php';
             <div class="row">
                 <div class="col-12">
                     <div class="form">
+                        <h5>Login</h5>
                         <form action="" method="post">
                             <div class="input-group">
                                 <input type="email" name="email" class="form-control" placeholder="Adicione seu email" required>
