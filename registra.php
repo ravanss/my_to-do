@@ -25,7 +25,7 @@ include 'header.php';
     <section>
         <div class="container">
             <div class="row">
-                <div class="col-6">
+                <div class="col-12">
                     <div class="form">
                         <h5>Registre-se</h5>
                         <form action="login.php" method="post">
@@ -46,11 +46,6 @@ include 'header.php';
                             <a href="login.php">Já possui uma conta? Faça login aqui.</a>
                         </div>
 
-                    </div>
-                </div>
-                <div class="col-6">
-                    <div class="register-img">
-                        <img src="assets/img/register.png" alt="Imagem de registro">
                     </div>
                 </div>
             </div>
