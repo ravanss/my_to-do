@@ -220,6 +220,10 @@ body {
   border-radius: 5px;
 }
 
+.registra footer #add-button, .login footer #add-button {
+  display: none;
+}
+
 .footer {
   position: absolute;
   bottom: 0;
