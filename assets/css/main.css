@@ -203,6 +203,22 @@ body {
   margin: 0;
   padding: 0;
 }
+.login .main .form {
+  padding: 55px 20px 55px 30px;
+  border-radius: 20px 0px 0px 20px;
+}
+.login .main .login-img {
+  background-color: #E9E8C9;
+  padding: 50px;
+  border-radius: 0px 20px 20px 0px;
+}
+.login .main .login-img img {
+  width: 300px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+  border-radius: 5px;
+}
 
 .footer {
   position: absolute;
