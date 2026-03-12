@@ -25,29 +25,57 @@ body{
         padding: 15px;
         border-radius: 15px;
         background-color: white;
+        .title-form-icon{
+            font-size: 22px;
+            color: $medium-jungle;
+            margin-right: 5px;
+        }
+        h5{
+            font-size: 22px;
+            font-weight: bold;
+        }
         form{
             .input-group {
+                position: relative;
                 margin-bottom: 10px;
+                span{
+                    position: absolute;
+                    top: 5px;
+                    left: 0px;
+                    font-size: 16px;
+                    color: $medium-jungle;
+                }
                 .form-control {
                     background-color: transparent;
                     border: none;
                     border-bottom: 1px solid black;
                     border-radius: 0;
                     padding: 5px 0;
+                    padding-left: 30px;
                     &:hover, &:active, &:focus {
                         box-shadow: none;
                     }
                 }
             }
             .btn-custom {
+                font-size: 20px;
                 background-color: $light-green;
                 border: 1px solid white;
                 color: black;
-                padding: 5px 15px;
+                padding: 7px 25px;
                 cursor: pointer;
+                border-radius: 10px !important;
                 &:hover {
                     background-color: $medium-jungle;
                     color: $beige;
+                    span{
+                        &:hover{
+                            color: $light-green;
+                        }
+                    }
+                }
+                span{
+                    z-index: 3;
                 }
             }
         }

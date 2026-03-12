@@ -27,23 +27,31 @@ include 'header.php';
             <div class="row">
                 <div class="col-12">
                     <div class="form">
-                        <h5>Registre-se</h5>
+                        <h5><span class="title-form-icon"><i class="fa-regular fa-user"></i></span>Registre-se</h5>
                         <form action="login.php" method="post">
                             <div class="input-group">
+                                <span><i class="fa-regular fa-user"></i></span>
                                 <input type="text" name="nome" class="form-control" placeholder="Adicione seu nome" required>
                             </div>
                             <div class="input-group">
+                                <span><i class="fa-regular fa-envelope"></i></span>
                                 <input type="email" name="email" class="form-control" placeholder="Adicione seu email" required>
                             </div>
                             <div class="input-group">
+                                <span><i class="fa-solid fa-lock"></i></span>
                                 <input type="password" name="senha" class="form-control" placeholder="Adicione sua senha" required>
                             </div>
-                            <div class="input-group">
-                                <button type="submit" class="btn btn-primary btn-custom">Registrar</button>
+                            <div class="input-group">                        
+                                <button type="submit" class="btn btn-primary btn-custom">
+                                    <span><i class="fa-solid fa-check"></i></span>
+                                    Registrar
+                                </button>
                             </div>
                         </form>
                         <div class="fast-link">
-                            <a href="login.php">Já possui uma conta? Faça login aqui.</a>
+                            <a href="login.php">Já possui uma conta? Faça login aqui.
+                                <span><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                            </a>
                         </div>
 
                     </div>

@@ -72,8 +72,25 @@ body {
   border-radius: 15px;
   background-color: white;
 }
+.main .form .title-form-icon {
+  font-size: 22px;
+  color: #3da35d;
+  margin-right: 5px;
+}
+.main .form h5 {
+  font-size: 22px;
+  font-weight: bold;
+}
 .main .form form .input-group {
+  position: relative;
   margin-bottom: 10px;
+}
+.main .form form .input-group span {
+  position: absolute;
+  top: 5px;
+  left: 0px;
+  font-size: 16px;
+  color: #3da35d;
 }
 .main .form form .input-group .form-control {
   background-color: transparent;
@@ -81,21 +98,30 @@ body {
   border-bottom: 1px solid black;
   border-radius: 0;
   padding: 5px 0;
+  padding-left: 30px;
 }
 .main .form form .input-group .form-control:hover, .main .form form .input-group .form-control:active, .main .form form .input-group .form-control:focus {
   -webkit-box-shadow: none;
           box-shadow: none;
 }
 .main .form form .btn-custom {
+  font-size: 20px;
   background-color: #96e072;
   border: 1px solid white;
   color: black;
-  padding: 5px 15px;
+  padding: 7px 25px;
   cursor: pointer;
+  border-radius: 10px !important;
 }
 .main .form form .btn-custom:hover {
   background-color: #3da35d;
   color: #f2fbe0;
+}
+.main .form form .btn-custom:hover span:hover {
+  color: #96e072;
+}
+.main .form form .btn-custom span {
+  z-index: 3;
 }
 .main .form .fast-link a {
   color: black;
