@@ -29,13 +29,19 @@ include 'header.php';
             <div class="row">
                 <div class="col-6 px-0 mx-0">
                     <div class="form">
-                        <h5>Login</h5>
+                        <h5><span class="title-form-icon"><i class="fa-regular fa-user"></i></span>Login</h5>
                         <form action="" method="post">
                             <div class="input-group">
+                                <span><i class="fa-regular fa-envelope"></i></span>
                                 <input type="email" name="email" class="form-control" placeholder="Adicione seu email" required>
                             </div>
                             <div class="input-group">
+                                <span><i class="fa-solid fa-lock"></i></span>
                                 <input type="password" name="senha" class="form-control" placeholder="Adicione sua senha" required>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
+                                <label class="form-check-label" for="switchCheckDefault">Acesse nossos <a href="forgot_password.php">Termos e Condições</a></label>
                             </div>
                             <div class="input-group">
                                 <button type="submit" class="btn btn-primary btn-custom">Acessar</button>

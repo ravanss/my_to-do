@@ -55,7 +55,7 @@ html, body {
 body {
   font-size: 100%;
   list-style-type: none;
-  background-color: #f2fbe0;
+  background-color: #d4e9cc;
 }
 
 .main {
@@ -91,6 +91,7 @@ body {
   left: 0px;
   font-size: 16px;
   color: #3da35d;
+  z-index: 99;
 }
 .main .form form .input-group .form-control {
   background-color: transparent;
@@ -104,6 +105,20 @@ body {
   -webkit-box-shadow: none;
           box-shadow: none;
 }
+.main .form form .form-check.form-switch #switchCheckDefault {
+  background-color: #3da35d;
+  border-color: #3da35d;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  color: #3da35d;
+}
+.main .form form .form-check.form-switch a {
+  color: black;
+  text-decoration: none;
+}
+.main .form form .form-check.form-switch a:hover, .main .form form .form-check.form-switch a:focus {
+  color: #3da35d;
+}
 .main .form form .btn-custom {
   font-size: 20px;
   background-color: #96e072;
@@ -113,15 +128,9 @@ body {
   cursor: pointer;
   border-radius: 10px !important;
 }
-.main .form form .btn-custom:hover {
+.main .form form .btn-custom:hover, .main .form form .btn-custom:focus {
   background-color: #3da35d;
   color: #f2fbe0;
-}
-.main .form form .btn-custom:hover span:hover {
-  color: #96e072;
-}
-.main .form form .btn-custom span {
-  z-index: 3;
 }
 .main .form .fast-link a {
   color: black;
@@ -230,8 +239,10 @@ body {
   padding: 0;
 }
 .login .main .form {
-  padding: 55px 20px 55px 30px;
+  padding: 35px 20px 35px 30px;
   border-radius: 20px 0px 0px 20px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 .login .main .login-img {
   background-color: #E9E8C9;

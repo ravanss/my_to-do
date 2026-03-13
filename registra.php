@@ -42,10 +42,7 @@ include 'header.php';
                                 <input type="password" name="senha" class="form-control" placeholder="Adicione sua senha" required>
                             </div>
                             <div class="input-group">                        
-                                <button type="submit" class="btn btn-primary btn-custom">
-                                    <span><i class="fa-solid fa-check"></i></span>
-                                    Registrar
-                                </button>
+                                <button type="submit" class="btn btn-primary btn-custom">Registrar</button>
                             </div>
                         </form>
                         <div class="fast-link">
