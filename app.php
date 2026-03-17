@@ -10,9 +10,11 @@
       <div class="container">
         <div class="row">
           <div class="col-12">
-            <h1 class="Title-list">Lista de tarefas</h1>
-            <ul id="tasks-list"></ul>
-            <span>* clique na tarefa para marcar como concluída</span>
+            <div class="list-extern">
+              <h1 class="Title-list">Lista de tarefas</h1>
+              <ul id="tasks-list"></ul>
+              <span>* clique na tarefa para marcar como concluída</span>
+            </div>
           </div>
         </div>
       </div>
