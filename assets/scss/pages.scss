@@ -101,9 +101,19 @@ body{
     }
 }
 
+.list-extern{
+    width: 80%;
+    margin: 0 auto;
+    border: 2px solid green;
+    padding: 10px 15px;
+    border-radius: 10px;
+    background-color: white;
+}
+
 #tasks-list{
     margin: 10px 0;
     padding-bottom: 10px;
+    padding-left: 15px;
 }
 
 #tasks-list li{
@@ -142,6 +152,15 @@ body{
     margin: 0 5px;
 }
 
+// Ocultado botão de adicionar tarefa nas páginas de registro, login e reset
+.registra, .login, .reset{
+    footer{
+        #add-button{
+            display: none;
+        }
+    }    
+}
+
 // Registration page styles
 .registra{
     height: 100vh;
@@ -166,7 +185,7 @@ body{
 }
 
 // Login page styles
-.login{
+.login, .reset{
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -181,10 +200,20 @@ body{
             padding: 35px 20px 35px 30px;
             border-radius: 20px 0px 0px 20px;
             box-shadow: none;
+            .login-reset{
+                display: block;
+                margin-top: 10px;
+                font-size: 14px;
+                color: $medium-jungle;
+                text-decoration: none;
+                &:hover{
+                    color: $light-green;
+                }
+            }
         }
         .login-img{
             background-color: #E9E8C9;
-            padding: 50px;
+            padding: 64px 0;
             border-radius: 0px 20px 20px 0px;
             img{
                 width: 300px;
@@ -197,10 +226,10 @@ body{
     }
 }
 
-.registra, .login{
-    footer{
-        #add-button{
-            display: none;
+.reset{
+     .main{
+        .login-img {
+            padding: 25px 0;
         }
-    }    
+     }
 }

@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header("Location: app.php");
         exit();
     } else {
-        echo "acesso negado";
+        echo "<script>alert('E-mail ou senha incorretos!');</script>";
     }
 }
 
@@ -47,7 +47,7 @@ include 'header.php';
                                 <button type="submit" class="btn btn-primary btn-custom">Acessar</button>
                             </div>
                         </form>
-                        <a href="./reset.php">Esqueci minha senha! <span><i class="fa-solid fa-arrow-up-right-from-square"></i></span></a>
+                        <a class="login-reset" href="./reset.php">Esqueci minha senha! <span><i class="fa-solid fa-arrow-up-right-from-square"></i></span></a>
                     </div>
                 </div>
                 <div class="col-6 px-0 mx-0">

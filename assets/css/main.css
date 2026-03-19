@@ -105,6 +105,9 @@ body {
   -webkit-box-shadow: none;
           box-shadow: none;
 }
+.main .form form .form-check.form-switch {
+  margin-bottom: 8px;
+}
 .main .form form .form-check.form-switch #switchCheckDefault {
   background-color: #3da35d;
   border-color: #3da35d;
@@ -141,9 +144,19 @@ body {
   color: #3da35d;
 }
 
+.list-extern {
+  width: 80%;
+  margin: 0 auto;
+  border: 2px solid green;
+  padding: 10px 15px;
+  border-radius: 10px;
+  background-color: white;
+}
+
 #tasks-list {
   margin: 10px 0;
   padding-bottom: 10px;
+  padding-left: 15px;
 }
 
 #tasks-list li {
@@ -191,6 +204,10 @@ body {
   margin: 0 5px;
 }
 
+.registra footer #add-button, .login footer #add-button, .reset footer #add-button {
+  display: none;
+}
+
 .registra {
   height: 100vh;
   display: -webkit-box;
@@ -219,7 +236,7 @@ body {
   margin: 0 auto;
 }
 
-.login {
+.login, .reset {
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -231,25 +248,35 @@ body {
       -ms-flex-align: center;
           align-items: center;
 }
-.login .header {
+.login .header, .reset .header {
   display: none;
 }
-.login .main {
+.login .main, .reset .main {
   margin: 0;
   padding: 0;
 }
-.login .main .form {
+.login .main .form, .reset .main .form {
   padding: 35px 20px 35px 30px;
   border-radius: 20px 0px 0px 20px;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
-.login .main .login-img {
+.login .main .form .login-reset, .reset .main .form .login-reset {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #3da35d;
+  text-decoration: none;
+}
+.login .main .form .login-reset:hover, .reset .main .form .login-reset:hover {
+  color: #96e072;
+}
+.login .main .login-img, .reset .main .login-img {
   background-color: #E9E8C9;
-  padding: 50px;
+  padding: 64px 0;
   border-radius: 0px 20px 20px 0px;
 }
-.login .main .login-img img {
+.login .main .login-img img, .reset .main .login-img img {
   width: 300px;
   height: auto;
   margin: 0 auto;
@@ -257,8 +284,8 @@ body {
   border-radius: 5px;
 }
 
-.registra footer #add-button, .login footer #add-button {
-  display: none;
+.reset .main .login-img {
+  padding: 25px 0;
 }
 
 .footer {
