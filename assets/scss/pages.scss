@@ -115,12 +115,11 @@ body{
         margin: 10px 0;
         padding-bottom: 10px;
         padding-left: 15px;
-    }
-
-    #tasks-list li{
-        position: relative;
-        border-bottom: 1px solid black;
-        cursor: pointer;
+         li{
+            position: relative;
+            border-bottom: 1px solid black;
+            cursor: pointer;
+        }
     }
 
     #tasks-list li a{
