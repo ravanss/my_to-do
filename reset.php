@@ -4,18 +4,10 @@ require_once 'php/config.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];
     print_r($email);
-    $new_password = bin2hex(random_bytes(4)); // Gerar uma nova senha aleatória
-    $hashed_password = password_hash($new_password, PASSWORD_DEFAULT); // Hash da nova senha
-    $sql = "UPDATE usuarios SET senha = ? WHERE email = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->execute([$hashed_password, $email]);
-    if ($stmt->rowCount() > 0) {
-        // Enviar a nova senha por e-mail (aqui você pode usar uma biblioteca de envio de e-mails)
-        // Exemplo: mail($email, "Sua nova senha", "Sua nova senha é: $new_password");
-        echo "<script>alert('Uma nova senha foi enviada para o seu e-mail!');</script>";
-    } else {
-        echo "<script>alert('E-mail não encontrado!');</script>";
-    }
+    $new_pass = bin2hex(random_bytes(16));
+    $hash = password_hash($new_pass, PASSWORD_DEFAULT);
+    print_r($hash);
+// Salve esse $hash no banco de dados, não a $new_pass.
 }
 include 'header.php';
 ?>
