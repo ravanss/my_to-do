@@ -3,11 +3,17 @@ require_once 'php/config.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];
-    print_r($email);
-    $new_pass = bin2hex(random_bytes(16));
-    $hash = password_hash($new_pass, PASSWORD_DEFAULT);
-    print_r($hash);
-// Salve esse $hash no banco de dados, não a $new_pass.
+    $new_pass = bin2hex(random_bytes(4)); // Gera uma senha aleatória de 8 caracteres (4 bytes)
+    $hash = password_hash($new_pass, PASSWORD_DEFAULT); // Salve esse $hash no banco de dados, não a $new_pass.
+
+    $sql = "UPDATE usuarios SET senha = ? WHERE email = ?";
+    $stmt = $conn->prepare($sql);
+    try {
+        $stmt->execute([$hash, $email]);
+        echo "<script>alert('Senha redefinida! Sua nova senha é: " . $new_pass . "'); window.location.href = 'login.php';</script>";
+    } catch (PDOException $e) {
+        echo "<script>alert('Erro ao redefinir senha: " . $e->getMessage() . "');</script>";
+    }
 }
 include 'header.php';
 ?>
