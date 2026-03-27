@@ -6,18 +6,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $new_pass = bin2hex(random_bytes(4)); // Gera uma senha aleatória de 8 caracteres (4 bytes)
     $hash = password_hash($new_pass, PASSWORD_DEFAULT); // Salve esse $hash no banco de dados, não a $new_pass.
 
-    $sql = "SELECT * FROM usuarios WHERE email = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->execute([$email]);
-    $user = $stmt->fetch(PDO::FETCH_ASSOC);
-    if($user) {
-        echo "<script>alert('Senha redefinida! Sua nova senha é: " . $new_pass . "'); window.location.href = 'login.php';</script>";
-        $sql = "UPDATE usuarios SET senha = ? WHERE email = ?";
-        $stmt = $conn->prepare($sql);
-        $stmt->execute([$hash, $email]);
-    } else{
-        echo "<script>alert('Erro ao redefinir senha: Email não encontrado.');</script>";
+    if(!empty($email)) {
+        echo "<script>alert('E-mail enviado! Verifique sua caixa de entrada.');</script>";
+    } else {
+        echo "<script>alert('Erro ao enviar e-mail: E-mail vazio.');</script>";
     }
+
 }
 include 'header.php';
 ?>
