@@ -5,9 +5,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];
     $new_pass = bin2hex(random_bytes(4)); // Gera uma senha aleatória de 8 caracteres (4 bytes)
     $hash = password_hash($new_pass, PASSWORD_DEFAULT); // Salve esse $hash no banco de dados, não a $new_pass.
-
+    //valida se o email existe no banco de dados
     if(!empty($email)) {
-        echo "<script>alert('E-mail enviado! Verifique sua caixa de entrada.');</script>";
+        // busca o usuário pelo email
+        $sql = "SELECT id, email, senha FROM usuarios WHERE email = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute([$email]);
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+        //print_r($user);
     } else {
         echo "<script>alert('Erro ao enviar e-mail: E-mail vazio.');</script>";
     }
