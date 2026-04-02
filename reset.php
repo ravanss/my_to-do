@@ -8,15 +8,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     //valida se o email existe no banco de dados
     if(!empty($email)) {
         // busca o usuário pelo email
-        $sql = "SELECT id, email, senha FROM usuarios WHERE email = ?";
+        $sql = "SELECT id, email, senha FROM usuarios WHERE email = ? LIMIT 1";
         $stmt = $conn->prepare($sql);
         $stmt->execute([$email]);
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
-        //print_r($user);
+        if(!empty($user)){
+            //alterando senha do usuário
+            $sql = "UPDATE usuarios SET senha = ? WHERE id = ?";
+            $stmt = $conn->prepare($sql);
+            $stmt->execute([$hash, $user['id']]);
+            print_r($new_pass);
+            echo "<script>alert('Senha resetada com sucesso!');</script>";
+        } else {
+            echo "<script>alert('E-mail não encontrado.');</script>";
+        }
     } else {
         echo "<script>alert('Erro ao enviar e-mail: E-mail vazio.');</script>";
     }
-
 }
 include 'header.php';
 ?>
