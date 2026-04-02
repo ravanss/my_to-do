@@ -128,26 +128,28 @@ body{
                 width: 90%;
                 text-decoration: none;
                 color: black;
+                &.completed{
+                    text-decoration: line-through #cdcdcc;
+                    color: #cdcdcd;
+                }
+            }
+            .action-icons{
+                display: flex;
+                position: absolute;
+                top: auto;
+                right: 0;
+                bottom: 3px;
+                span{
+                    cursor: pointer;
+                    font-size: 20px;
+                    margin: 0 5px;
+                }
             }
         }
     }
-    #tasks-list li a.completed{
-        text-decoration: line-through #cdcdcc;
-        color: #cdcdcd;
-    }
-
-    #tasks-list li .action-icons{
-        display: flex;
-        position: absolute;
-        top: auto;
-        right: 0;
-        bottom: 3px;
-    }
-
-    #tasks-list li .action-icons span{
-        cursor: pointer;
-        font-size: 20px;
-        margin: 0 5px;
+    #task-input:focus {
+        box-shadow: none;
+        border: 1px solid black;
     }
 }
 

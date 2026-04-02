@@ -1,6 +1,6 @@
     <footer class="footer">
       <!-- Button trigger modal -->
-      <button id="add-button" type="button" class="btn btn-primary btn-custom" data-bs-toggle="modal" data-bs-target="#modalAddTask">
+      <button id="add-button" type="button" class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#modalAddTask">
           <span><i class="fa-solid fa-plus"></i></span>
       </button>
 

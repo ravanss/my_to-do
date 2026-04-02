@@ -144,7 +144,7 @@ body {
   color: #3da35d;
 }
 
-.list-extern {
+.app .list-extern {
   width: 80%;
   margin: 0 auto;
   border: 2px solid green;
@@ -152,20 +152,17 @@ body {
   border-radius: 10px;
   background-color: white;
 }
-
-#tasks-list {
+.app #tasks-list {
   margin: 10px 0;
   padding-bottom: 10px;
   padding-left: 15px;
 }
-
-#tasks-list li {
+.app #tasks-list li {
   position: relative;
   border-bottom: 1px solid black;
   cursor: pointer;
 }
-
-#tasks-list li a {
+.app #tasks-list li a {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -181,14 +178,12 @@ body {
   text-decoration: none;
   color: black;
 }
-
-#tasks-list li a.completed {
+.app #tasks-list li a.completed {
   -webkit-text-decoration: line-through #cdcdcc;
           text-decoration: line-through #cdcdcc;
   color: #cdcdcd;
 }
-
-#tasks-list li .action-icons {
+.app #tasks-list li .action-icons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -197,11 +192,15 @@ body {
   right: 0;
   bottom: 3px;
 }
-
-#tasks-list li .action-icons span {
+.app #tasks-list li .action-icons span {
   cursor: pointer;
   font-size: 20px;
   margin: 0 5px;
+}
+.app #task-input:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: 1px solid black;
 }
 
 .registra footer #add-button, .login footer #add-button, .reset footer #add-button {
@@ -294,6 +293,18 @@ body {
   left: 0;
   width: 100%;
 }
+.footer .btn.btn-custom {
+  background-color: #3da35d;
+  border-color: #3da35d;
+  color: white;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+.footer .btn.btn-custom:hover, .footer .btn.btn-custom:focus {
+  background-color: rgb(47.1116071429, 125.8883928571, 71.8258928571);
+  border-color: rgb(47.1116071429, 125.8883928571, 71.8258928571);
+  color: white;
+}
 .footer .modal .btn-danger {
   display: none;
 }
@@ -315,6 +326,11 @@ body {
 @media (max-width: 1200px) {
   .registra .main .form {
     width: 55%;
+  }
+}
+@media (max-width: 576px) {
+  .registra .main .form {
+    width: 80%;
   }
 }
 /*# sourceMappingURL=main.css.map */
