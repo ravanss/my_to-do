@@ -32,7 +32,7 @@ include 'header.php';
         <section>
             <div class="container">
                 <div class="row">
-                    <div class="col-6 px-0 mx-0">
+                    <div class="col-md-6 col-sm-12 px-0 mx-0">
                         <div class="form">
                             <h5><span class="title-form-icon"><i class="fa-regular fa-user"></i></span>Informe o e-mail</h5>
                             <form action="" method="post">
@@ -47,7 +47,7 @@ include 'header.php';
                             <a class="login-reset" href="./login.php">Fazer login! <span><i class="fa-solid fa-arrow-up-right-from-square"></i></span></a>
                         </div>
                     </div>
-                    <div class="col-6 px-0 mx-0">
+                    <div class="col-md-6 col-sm-12 px-0 mx-0">
                         <div class="login-img">
                             <img src="assets/img/login.png" alt="Imagem de login">
                         </div>
