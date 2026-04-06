@@ -4,6 +4,7 @@ require_once 'php/config.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];
     $password = $_POST['senha'];
+    $aceitar = isset($_POST['switchCheck']);
 
     $sql = "SELECT * FROM usuarios WHERE email = ?";
     $stmt = $conn->prepare($sql);
@@ -40,8 +41,8 @@ include 'header.php';
                                 <input type="password" name="senha" class="form-control" placeholder="Adicione sua senha" required>
                             </div>
                             <div class="form-check form-switch">
-                                <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
-                                <label class="form-check-label" for="switchCheckDefault">Acesse nossos <a href="forgot_password.php">Termos e Condições</a></label>
+                                <input class="form-check-input" type="checkbox" role="switch" name="switchCheck" value="aceitado">
+                                <label class="form-check-label" for="switchCheck">Acesse nossos <a href="forgot_password.php">Termos e Condições</a></label>
                             </div>
                             <div class="input-group">
                                 <button type="submit" class="btn btn-primary btn-custom">Acessar</button>
