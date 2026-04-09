@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt = $conn->prepare($sql);
     $stmt->execute([$email]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
-    if ($user && password_verify($password, $user['senha'])) {
+    if ($user && password_verify($password, $user['senha']) && $aceitar == 1) {
         session_start();
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['usuario_name'] = $user['nome'];
@@ -41,8 +41,8 @@ include 'header.php';
                                 <input type="password" name="senha" class="form-control" placeholder="Adicione sua senha" required>
                             </div>
                             <div class="form-check form-switch">
-                                <input class="form-check-input" type="checkbox" role="switch" name="switchCheck" value="aceitado">
-                                <label class="form-check-label" for="switchCheck">Acesse nossos <a href="forgot_password.php">Termos e Condições</a></label>
+                                <input class="form-check-input" type="checkbox" role="switch" name="aceita_termos" value="1" id="switchCheck" required>
+                                <label class="form-check-label" for="aceita_termos">Acesse nossos <a href="forgot_password.php">Termos e Condições</a></label>
                             </div>
                             <div class="input-group">
                                 <button type="submit" class="btn btn-primary btn-custom">Acessar</button>
