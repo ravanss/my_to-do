@@ -51,6 +51,9 @@
 
 // Small devices (landscape phones, 576px and up)
 @media (max-width: 576px) {
+    body{
+        padding: 15px;
+    }
     .registra{
         .main{
             .form{
