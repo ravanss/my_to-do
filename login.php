@@ -4,18 +4,22 @@ require_once 'php/config.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];
     $password = $_POST['senha'];
-    $aceitar = isset($_POST['switchCheck']);
+    $aceitar = isset($_POST['aceita_termos']) ? 1 : 0;
 
     $sql = "SELECT * FROM usuarios WHERE email = ?";
     $stmt = $conn->prepare($sql);
     $stmt->execute([$email]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
     if ($user && password_verify($password, $user['senha']) && $aceitar == 1) {
+        $sql = "UPDATE usuarios SET aceito = NOW() WHERE id = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute([$user['id']]);
         session_start();
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['usuario_name'] = $user['nome'];
         header("Location: app.php");
         exit();
+
     } else {
         echo "<script>alert('E-mail ou senha incorretos!');</script>";
     }
