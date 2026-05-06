@@ -1,18 +1,23 @@
 # my_to-do
-Crud em projeto para gerenciamento de tarefas
-
+Web app para gerenciamento de tarefas do dia-a-dia.
 <hr/>
 <h1>Resumo</h1>
-<p>Projeto web de regenciamento de tarefas com funcionalidades:
+<p>Projeto web de regenciamento de tarefas com funcionalidades:</p>
 </br>
-Criação de conta de usuario
-</br>
-Login no sistema ao sistema
-</br>
-Recuperação de senha pelo sistema
-</br>
-Funcionalidades de criação, deleção, alteração e conclusão de tarefas</p>
-
+<ul>
+    <li>
+        Criação de conta de usuario
+    </li>
+    <li>
+        Login no sistema ao sistema
+    </li>
+    <li>
+        Recuperação de senha pelo sistema
+    </li>
+    <li>
+    Funcionalidades de criação, deleção, alteração e conclusão das tarefas
+    </li>
+<ul>
 <hr/>
-O sistema
-
+<h2>O sistema</h2>
+<p>O sistema foi desenvolvido com o intuito de disponibilizar</p>
