@@ -17,7 +17,7 @@ Web app para gerenciamento de tarefas do dia-a-dia.
     <li>
     Funcionalidades de criação, deleção, alteração e conclusão das tarefas
     </li>
-<ul>
+</ul>
 <hr/>
 <h2>O sistema</h2>
 <p>O sistema foi desenvolvido com o intuito de disponibilizar</p>
