@@ -21,7 +21,8 @@ Web app para gerenciamento de tarefas do dia-a-dia.
 <hr/>
 <h2>O sistema</h2>
 <p>O sistema foi desenvolvido com o intuito de disponibilizar uma maneira de geraciar tarefa do dia-a-dia apartir de uma simples pagina web.</p>
+<img>
 <h2>Tecnolias utilizadas</h2>
 <h2>Modo de uso</h2>
-<h6>FAQ</h6>
-<h6><strong>Uma futura verão sera desenvolvida para um aplicativo nativo.</strong></h6>
+<h3>FAQ</h3>
+<h3><strong>Uma futura verão sera desenvolvida para um aplicativo nativo.</strong></h3>
