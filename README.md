@@ -22,7 +22,7 @@ Web app para gerenciamento de tarefas do dia-a-dia.
 <h2>O sistema</h2>
 <p>O sistema foi desenvolvido com o intuito de disponibilizar uma maneira de geraciar tarefa do dia-a-dia apartir de uma simples pagina web.</p>
 <img>
-<h2>Tecnolias utilizadas</h2>
+<h2>Tecnolias utilizadas no proejeto</h2>
 
 ![Static Badge](https://img.shields.io/badge/html5-repo-c8c8c8%3Flogo%3Dhtml5)
 
