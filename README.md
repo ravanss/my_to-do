@@ -24,7 +24,7 @@ Web app para gerenciamento de tarefas do dia-a-dia.
 <img>
 <h2>Tecnolias utilizadas</h2>
 
-![Static Badge](https://img.shields.io/badge/html5-teste-000000%3Flogo%3Dhtml5)
+![Static Badge](https://img.shields.io/badge/html5-repo-c8c8c8%3Flogo%3Dhtml5)
 
 <h2>Modo de uso</h2>
 <h3>FAQ</h3>
