@@ -26,6 +26,7 @@ Web app para gerenciamento de tarefas do dia-a-dia.
 
 ![HTML5](https://img.shields.io/badge/HTML5-blue?&logo=html5&logoColor=white)
 ![SCSS](https://img.shields.io/badge/SCSS-CC6699?&logo=sass&logoColor=white)
+![JS3](https://img.shields.io/badge/JS-#F7DF1E?&logo=javascript&logoColor=white)
 
 <h2>Modo de uso</h2>
 <h3>FAQ</h3>
