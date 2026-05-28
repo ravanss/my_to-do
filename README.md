@@ -23,6 +23,8 @@ Web app para gerenciamento de tarefas do dia-a-dia.
 <p>O sistema foi desenvolvido com o intuito de disponibilizar uma maneira de gerenciar tarefa do dia-a-dia apartir de uma simples pagina web.</p>
 <p>Algumas das telas presentes no sistema:</p>
 <img src="https://github.com/ravanss/my_to-do/blob/main/assets/img/registre.png" width="400px">
+<img src="https://github.com/ravanss/my_to-do/blob/main/assets/img/app.png" width="400px">
+<img src="https://github.com/ravanss/my_to-do/blob/main/assets/img/img.png" width="400px">
 <hr/>
 <h2>Tecnolias utilizadas no projeto</h2>
 <p>Aqui estão as informações das tecnologias utilizadas no sistema</p>
@@ -38,6 +40,11 @@ Web app para gerenciamento de tarefas do dia-a-dia.
 <h2>Modo de uso</h2>
 <p>Projeto de facil instalação.</p>
 <p>Para ter o projeto em sua maquina basta tem a versão mais recente do xampp e acesso aos bancos de dados.</p>
+<ol>
+    <li>Download de todos os arquivos presentes na pasta de nome "MY_TO-DO"</li>
+    <li>Instalação do banco de dados dentro do xampp(recomendado) inserido o arquivo ""ou algum aplicativo de mesma natureza</li>
+    <li></li>
+</ol>
 <p>E necessario um pequeno conhecimento de na area de ti para instalação do projeto</p>
 <h3>FAQ</h3>
 <p>Caso tenha duvida mande um e-mail para psaulo7@gmail.com ficarei a disposição para auxilia da melhor maneira.</p>
