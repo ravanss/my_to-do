@@ -42,7 +42,7 @@ Web app para gerenciamento de tarefas do dia-a-dia.
 <p>Para ter o projeto em sua maquina basta tem a versão mais recente do xampp e acesso aos bancos de dados.</p>
 <ol>
     <li>Download de todos os arquivos presentes na pasta de nome "MY_TO-DO"</li>
-    <li>Instalação do banco de dados dentro do xampp(recomendado) inserido o arquivo ""ou algum aplicativo de mesma natureza</li>
+    <li>Instalação do banco de dados dentro do xampp(recomendado) inserido o arquivo "to-do_app.sql"ou algum aplicativo de mesma natureza</li>
     <li></li>
 </ol>
 <p>E necessario um pequeno conhecimento de na area de ti para instalação do projeto</p>
