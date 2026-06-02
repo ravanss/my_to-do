@@ -48,6 +48,7 @@ Web app para gerenciamento de tarefas do dia-a-dia.
     <li>Download de todos os arquivos presentes na pasta de nome "MY_TO-DO"</li>
     <li>Instalação do banco de dados dentro do xampp(recomendado) inserido o arquivo "to-do_app.sql"ou algum aplicativo de mesma natureza</li>
     <li>Descompactar os arquivos em um pasta com acesso dos serviços do apache e do mysql para funcionar a aplicação.</li>
+    <li>Ligar os serviços do apache e mysql e seguir os diretorios ate a pasta raiz do projeto.</li>
     <li>Criação de conta dentro do app e login dentro da aplicação.</li>
     <li>Login no sistema utilizando mesma credenciais</li>
     <li>Utilizar livremente o app.</li>
